@@ -3,1150 +3,835 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SnapLoad — Free Video Downloader | YouTube, TikTok, Instagram & 1000+ Sites</title>
-<meta name="description" content="Download videos from YouTube, TikTok, Instagram, Twitter, Facebook, Reddit free. HD MP4 or MP3 audio. No signup needed.">
-<meta name="keywords" content="video downloader,youtube downloader,tiktok downloader,instagram downloader,facebook video downloader,twitter video downloader,mp3 converter,free video downloader,tiktok no watermark">
+<title id="pageTitle">SnapLoad — Free Video Downloader | YouTube, TikTok, Instagram & 1000+ Sites</title>
+<meta name="description" id="pageDesc" content="Download videos from YouTube, TikTok, Instagram, Twitter, Facebook free. HD MP4 or MP3. No signup needed.">
+<meta name="keywords" content="video downloader,youtube downloader,tiktok downloader,instagram downloader,mp3 converter,free video downloader">
 <meta name="robots" content="index,follow">
-<link rel="canonical" href="https://yourdomain.com/">
-<meta property="og:title" content="SnapLoad — Free Video Downloader">
-<meta property="og:description" content="Download HD videos from YouTube, TikTok, Instagram, Twitter & 1000+ sites. Free forever.">
+<link rel="canonical" href="https://yourdomain.com/" id="canonicalLink">
+<meta property="og:title" id="ogTitle" content="SnapLoad — Free Video Downloader">
+<meta property="og:description" id="ogDesc" content="Download HD videos free from YouTube, TikTok, Instagram and 1000+ sites.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://yourdomain.com/">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"SnapLoad","url":"https://yourdomain.com","description":"Free video downloader for YouTube, TikTok, Instagram, Twitter, Facebook and 1000+ sites.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<meta property="og:site_name" content="SnapLoad">
+<script type="application/ld+json" id="schemaOrg">{"@context":"https://schema.org","@type":"WebApplication","name":"SnapLoad","url":"https://yourdomain.com","description":"Free video downloader for YouTube, TikTok, Instagram and 1000+ sites.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 <!-- AdSense: <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXX" crossorigin="anonymous"></script> -->
 <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-/* ╔══════════════════════════════════════════════════════╗
-   ║  SNAPLOAD — GLASSY DARK DESIGN SYSTEM               ║
-   ╚══════════════════════════════════════════════════════╝ */
-:root {
-  --bg0: #08090d;
-  --bg1: #0e1018;
-  --bg2: #141720;
-  --bg3: #1c2030;
-  --glass: rgba(255,255,255,0.04);
-  --glass-border: rgba(255,255,255,0.08);
-  --glass-hover: rgba(255,255,255,0.07);
-  --white: #ffffff;
-  --text: #e2e8f0;
-  --muted: #64748b;
-  --faint: #2d3548;
-  --blue: #3b82f6;
-  --blue-bright: #60a5fa;
-  --blue-glow: rgba(59,130,246,0.25);
-  --purple: #8b5cf6;
-  --green: #22c55e;
-  --green-glow: rgba(34,197,94,0.2);
-  --red: #f87171;
-  --orange: #fb923c;
-  --yellow: #fbbf24;
-  --r: 14px;
-  --r-sm: 9px;
-  --r-lg: 22px;
-  --r-xl: 32px;
+/* ══════════════════════════════════════════════
+   SNAPLOAD DESIGN SYSTEM — GLASSY DARK
+══════════════════════════════════════════════ */
+:root{
+  --bg0:#07080c;--bg1:#0c0e16;--bg2:#111420;--bg3:#181c2a;
+  --glass:rgba(255,255,255,0.04);--glass2:rgba(255,255,255,0.07);
+  --border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.13);
+  --white:#fff;--text:#dde4f0;--muted:#5a6a85;--faint:#1e2538;
+  --blue:#3b82f6;--blue2:#60a5fa;--blue-g:rgba(59,130,246,0.18);
+  --purple:#8b5cf6;--green:#22c55e;--green-g:rgba(34,197,94,0.18);
+  --red:#f87171;--orange:#fb923c;--yellow:#fbbf24;--pink:#ec4899;
+  --grad:linear-gradient(135deg,#3b82f6,#8b5cf6);
+  --grad2:linear-gradient(135deg,#22c55e,#16a34a);
+  --r:13px;--rsm:8px;--rlg:20px;--rxl:28px;
+  --shadow:0 8px 32px rgba(0,0,0,0.4);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;font-size:16px}
-body{
-  font-family:'Outfit',sans-serif;
-  background:var(--bg0);
-  color:var(--text);
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
-  min-height:100vh;
-}
+body{font-family:'Outfit',sans-serif;background:var(--bg0);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;min-height:100vh}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+button{font-family:inherit;cursor:pointer}
+textarea,input,select{font-family:inherit}
 
-/* ── ANIMATED BG ── */
-body::before{
-  content:'';
-  position:fixed;inset:0;z-index:0;
-  background:
-    radial-gradient(ellipse 80% 60% at 20% 0%, rgba(59,130,246,0.12) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 50% at 80% 100%, rgba(139,92,246,0.10) 0%, transparent 60%),
-    radial-gradient(ellipse 40% 40% at 50% 50%, rgba(59,130,246,0.04) 0%, transparent 70%);
-  pointer-events:none;
-  animation:bgPulse 12s ease-in-out infinite alternate;
-}
-@keyframes bgPulse{
-  0%{opacity:0.7}
-  100%{opacity:1}
-}
+/* BG MESH */
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(ellipse 90% 70% at 10% 0%,rgba(59,130,246,0.09) 0%,transparent 55%),
+             radial-gradient(ellipse 70% 60% at 90% 100%,rgba(139,92,246,0.08) 0%,transparent 55%),
+             radial-gradient(ellipse 50% 40% at 50% 50%,rgba(59,130,246,0.03) 0%,transparent 70%);}
 
-/* ── ANIMATIONS ── */
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+/* ── KEYFRAMES ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
-@keyframes slideDown{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
-@keyframes scaleIn{from{opacity:0;transform:scale(0.95)}to{opacity:1;transform:scale(1)}}
+@keyframes scaleIn{from{opacity:0;transform:scale(0.96)}to{opacity:1;transform:scale(1)}}
 @keyframes spin{to{transform:rotate(360deg)}}
 @keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
-@keyframes glow{0%,100%{box-shadow:0 0 20px var(--blue-glow)}50%{box-shadow:0 0 40px var(--blue-glow),0 0 60px rgba(59,130,246,0.15)}}
-@keyframes cardEnter{
-  0%{opacity:0;transform:translateY(24px) scale(0.97)}
-  100%{opacity:1;transform:translateY(0) scale(1)}
-}
-@keyframes progressBar{0%{width:0%}100%{width:85%}}
-@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
-@keyframes ripple{0%{transform:scale(0);opacity:1}100%{transform:scale(4);opacity:0}}
+@keyframes progressAnim{0%{width:0%}to{width:82%}}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes cardIn{from{opacity:0;transform:translateY(18px) scale(0.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes blobFloat{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(20px,-15px) scale(1.05)}66%{transform:translate(-10px,10px) scale(0.97)}}
 
-/* ── GLASS UTILITY ── */
-.glass{
-  background:var(--glass);
-  backdrop-filter:blur(20px);
-  -webkit-backdrop-filter:blur(20px);
-  border:1px solid var(--glass-border);
-}
+/* ── GLASS CARD ── */
+.glass-card{background:rgba(12,14,22,0.82);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);border:1px solid var(--border);box-shadow:var(--shadow)}
 
 /* ══════════════════════════════════════
-   HEADER / NAV
+   HEADER
 ══════════════════════════════════════ */
-.site-header{
-  position:sticky;top:0;z-index:300;
-  background:rgba(8,9,13,0.85);
-  backdrop-filter:blur(24px);
-  -webkit-backdrop-filter:blur(24px);
-  border-bottom:1px solid var(--glass-border);
-}
-.nav-inner{
-  max-width:1200px;margin:0 auto;
-  padding:0 20px;height:62px;
-  display:flex;align-items:center;gap:8px;
-}
-.site-logo{
-  display:flex;align-items:center;gap:10px;
-  font-size:1.3rem;font-weight:800;
-  color:var(--white);letter-spacing:-0.02em;
-  flex-shrink:0;cursor:pointer;
-  text-decoration:none;
-}
-.logo-icon{
-  width:34px;height:34px;
-  background:linear-gradient(135deg,var(--blue),var(--purple));
-  border-radius:10px;
-  display:grid;place-items:center;
-  box-shadow:0 0 16px var(--blue-glow);
-}
-.logo-icon svg{width:16px;height:16px;fill:white}
-.logo-text span{color:var(--blue-bright)}
+.site-header{position:sticky;top:0;z-index:500;background:rgba(7,8,12,0.9);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 20px;height:60px;display:flex;align-items:center;gap:6px}
+.logo{display:flex;align-items:center;gap:10px;font-size:1.25rem;font-weight:800;color:var(--white);letter-spacing:-0.02em;flex-shrink:0;cursor:pointer;text-decoration:none}
+.logo-icon{width:33px;height:33px;background:var(--grad);border-radius:9px;display:grid;place-items:center;box-shadow:0 0 16px rgba(59,130,246,0.35)}
+.logo-icon svg{width:15px;height:15px;fill:white}
+.logo em{font-style:normal;color:var(--blue2)}
 
-.nav-links{
-  display:flex;align-items:center;gap:2px;
-  list-style:none;flex:1;overflow-x:auto;
-  scrollbar-width:none;
-}
-.nav-links::-webkit-scrollbar{display:none}
-.nav-links a{
-  font-size:0.82rem;font-weight:500;
-  color:var(--muted);
-  padding:6px 11px;border-radius:var(--r-sm);
-  transition:color 0.15s,background 0.15s;
-  white-space:nowrap;cursor:pointer;
-  text-decoration:none;
-}
-.nav-links a:hover{color:var(--text);background:var(--glass)}
-.nav-links a.active{color:var(--blue-bright);background:rgba(59,130,246,0.12)}
+.nav-menu{display:flex;align-items:center;gap:1px;list-style:none;overflow-x:auto;scrollbar-width:none;flex:1;padding:0 8px}
+.nav-menu::-webkit-scrollbar{display:none}
+.nav-menu a{font-size:0.8rem;font-weight:500;color:var(--muted);padding:5px 10px;border-radius:var(--rsm);transition:all 0.15s;white-space:nowrap;cursor:pointer}
+.nav-menu a:hover{color:var(--text);background:var(--glass2)}
+.nav-menu a.active{color:var(--blue2);background:rgba(59,130,246,0.12)}
 
-.nav-right{margin-left:auto;display:flex;align-items:center;gap:8px;flex-shrink:0}
+.nav-end{margin-left:auto;display:flex;align-items:center;gap:8px;flex-shrink:0}
+.ck-btn-nav{display:flex;align-items:center;gap:6px;background:var(--glass);border:1px solid var(--border);border-radius:var(--rsm);padding:6px 12px;font-size:0.75rem;font-weight:600;color:var(--muted);cursor:pointer;transition:all 0.15s;white-space:nowrap}
+.ck-btn-nav:hover{border-color:var(--blue);color:var(--blue2)}
+.nav-dot{width:7px;height:7px;border-radius:50%;background:var(--faint);transition:background 0.3s,box-shadow 0.3s}
+.nav-dot.on{background:var(--green);box-shadow:0 0 8px var(--green-g)}
 
-.ck-nav-btn{
-  display:flex;align-items:center;gap:7px;
-  background:var(--glass);
-  border:1px solid var(--glass-border);
-  border-radius:var(--r-sm);
-  padding:7px 13px;
-  font-family:inherit;font-size:0.78rem;font-weight:600;
-  color:var(--muted);cursor:pointer;
-  transition:all 0.2s;white-space:nowrap;
-}
-.ck-nav-btn:hover{border-color:var(--blue);color:var(--blue-bright)}
-.ck-nav-btn .dot{width:7px;height:7px;border-radius:50%;background:var(--faint);transition:background 0.3s}
-.ck-nav-btn .dot.on{background:var(--green);box-shadow:0 0 8px var(--green-glow)}
+/* Hamburger */
+.hamburger{display:none;background:none;border:none;padding:8px;cursor:pointer;margin-left:auto;flex-shrink:0}
+.hamburger span{display:block;width:20px;height:2px;background:var(--text);margin:4px 0;border-radius:2px;transition:all 0.3s}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(4px,5px)}
+.hamburger.open span:nth-child(2){opacity:0;transform:translateX(-8px)}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(4px,-5px)}
+@media(max-width:900px){.nav-menu{display:none}.ck-btn-nav{display:none}.hamburger{display:block}}
 
-.hamburger{
-  display:none;background:none;border:none;
-  padding:8px;cursor:pointer;flex-shrink:0;
-}
-.hamburger span{
-  display:block;width:20px;height:2px;
-  background:var(--text);margin:4px 0;border-radius:2px;
-  transition:all 0.3s;
-}
-.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}
-.hamburger.open span:nth-child(2){opacity:0}
-.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px)}
-
-@media(max-width:768px){
-  .nav-links{display:none}
-  .ck-nav-btn{display:none}
-  .hamburger{display:block;margin-left:auto}
-  .nav-inner{padding:0 16px}
-}
-
-/* ── MOBILE DRAWER ── */
-.mobile-drawer{
-  position:fixed;inset:62px 0 0;
-  background:rgba(8,9,13,0.97);
-  backdrop-filter:blur(24px);
-  z-index:299;
-  padding:20px;
-  display:flex;flex-direction:column;gap:4px;
-  transform:translateX(100%);
-  transition:transform 0.3s cubic-bezier(0.16,1,0.3,1);
-  overflow-y:auto;
-  border-left:1px solid var(--glass-border);
-}
-.mobile-drawer.open{transform:translateX(0)}
-.mobile-drawer a{
-  display:flex;align-items:center;gap:12px;
-  padding:13px 16px;border-radius:var(--r);
-  font-size:0.95rem;font-weight:600;color:var(--muted);
-  cursor:pointer;transition:all 0.15s;text-decoration:none;
-}
-.mobile-drawer a:hover{color:var(--text);background:var(--glass)}
-.mobile-drawer a .icon{font-size:1.1rem;width:24px;text-align:center}
-
-.mob-ck-btn{
-  margin-top:12px;
-  display:flex;align-items:center;gap:10px;
-  padding:14px 16px;border-radius:var(--r);
-  background:var(--glass);border:1px solid var(--glass-border);
-  font-family:inherit;font-size:0.9rem;font-weight:600;
-  color:var(--muted);cursor:pointer;width:100%;
-}
-.mob-ck-btn .dot{width:8px;height:8px;border-radius:50%;background:var(--faint)}
-.mob-ck-btn .dot.on{background:var(--green)}
+/* Mobile drawer */
+.mob-drawer{position:fixed;top:60px;right:0;bottom:0;width:280px;background:rgba(7,8,12,0.98);backdrop-filter:blur(24px);border-left:1px solid var(--border);z-index:499;padding:16px;transform:translateX(100%);transition:transform 0.3s cubic-bezier(0.16,1,0.3,1);overflow-y:auto;display:flex;flex-direction:column;gap:2px}
+.mob-drawer.open{transform:translateX(0)}
+.mob-drawer a,.mob-drawer button.mob-link{display:flex;align-items:center;gap:10px;padding:11px 14px;border-radius:var(--r);font-size:0.88rem;font-weight:600;color:var(--muted);cursor:pointer;transition:all 0.15s;text-decoration:none;border:none;background:none;width:100%;text-align:left}
+.mob-drawer a:hover,.mob-drawer button.mob-link:hover{color:var(--text);background:var(--glass2)}
+.mob-drawer .mob-sep{height:1px;background:var(--border);margin:8px 0}
+.mob-ck{margin-top:auto;padding-top:12px;border-top:1px solid var(--border)}
+.mob-ck-btn{width:100%;display:flex;align-items:center;gap:8px;padding:11px 14px;border-radius:var(--r);background:var(--glass);border:1px solid var(--border);font-family:inherit;font-size:0.82rem;font-weight:600;color:var(--muted);cursor:pointer;transition:all 0.15s}
+.mob-ck-btn:hover{border-color:var(--blue);color:var(--blue2)}
 
 /* ══════════════════════════════════════
-   HERO
+   PAGE SYSTEM
 ══════════════════════════════════════ */
-.hero{
-  position:relative;z-index:1;
-  padding:56px 20px 64px;
-  text-align:center;
-  overflow:hidden;
-}
-.hero-inner{max-width:740px;margin:0 auto}
-
-.hero-badge{
-  display:inline-flex;align-items:center;gap:8px;
-  background:rgba(59,130,246,0.1);
-  border:1px solid rgba(59,130,246,0.25);
-  border-radius:100px;
-  padding:6px 16px;
-  font-size:0.72rem;font-weight:600;
-  color:var(--blue-bright);letter-spacing:0.05em;
-  text-transform:uppercase;
-  margin-bottom:24px;
-  animation:fadeUp 0.6s ease both;
-}
-.hero-badge .live-dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
-
-.hero h1{
-  font-size:clamp(2.2rem,6vw,4rem);
-  font-weight:900;
-  line-height:1.1;
-  letter-spacing:-0.03em;
-  color:var(--white);
-  margin-bottom:16px;
-  animation:fadeUp 0.6s 0.1s ease both;
-}
-.hero h1 .grad{
-  background:linear-gradient(135deg,var(--blue-bright) 0%,var(--purple) 60%,#ec4899 100%);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-}
-
-.hero-sub{
-  font-size:clamp(0.95rem,2.5vw,1.1rem);
-  color:var(--muted);max-width:500px;
-  margin:0 auto 40px;line-height:1.7;
-  animation:fadeUp 0.6s 0.2s ease both;
-}
+.pg{display:none;position:relative;z-index:1;animation:fadeIn 0.3s ease}
+.pg.active{display:block}
+.hidden{display:none!important}
 
 /* ══════════════════════════════════════
-   DOWNLOADER CARD
+   HERO SECTION
 ══════════════════════════════════════ */
-.dl-card{
-  background:rgba(14,16,24,0.85);
-  backdrop-filter:blur(32px);
-  -webkit-backdrop-filter:blur(32px);
-  border:1px solid var(--glass-border);
-  border-radius:var(--r-xl);
-  padding:28px;
-  max-width:720px;
-  margin:0 auto;
-  box-shadow:0 8px 40px rgba(0,0,0,0.4),0 0 0 1px rgba(255,255,255,0.03) inset;
-  animation:scaleIn 0.5s 0.3s ease both;
-}
+.hero{padding:60px 20px 68px;text-align:center;position:relative;overflow:hidden}
+.hero-blob{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;opacity:0.15;animation:blobFloat 14s ease-in-out infinite}
+.hero-blob1{width:400px;height:400px;background:var(--blue);top:-100px;left:-80px}
+.hero-blob2{width:320px;height:320px;background:var(--purple);bottom:-60px;right:-60px;animation-delay:-7s}
+.hero-inner{max-width:760px;margin:0 auto;position:relative}
+.hero-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.22);border-radius:100px;padding:5px 14px;font-size:0.7rem;font-weight:700;color:var(--blue2);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:22px;animation:fadeUp 0.5s ease both}
+.live-dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s infinite;flex-shrink:0}
+.hero h1{font-size:clamp(2rem,6vw,3.8rem);font-weight:900;color:var(--white);line-height:1.1;letter-spacing:-0.03em;margin-bottom:14px;animation:fadeUp 0.5s 0.08s ease both}
+.grad-text{background:linear-gradient(135deg,var(--blue2),var(--purple) 50%,var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:clamp(0.92rem,2.2vw,1.05rem);color:var(--muted);max-width:500px;margin:0 auto 36px;line-height:1.7;animation:fadeUp 0.5s 0.16s ease both}
+
+/* ══════════════════════════════════════
+   DOWNLOADER BOX
+══════════════════════════════════════ */
+.dl-box{max-width:740px;margin:0 auto;border-radius:var(--rxl);padding:24px;animation:scaleIn 0.5s 0.2s ease both}
 
 /* Platform tabs */
-.ptabs{
-  display:flex;gap:6px;
-  overflow-x:auto;padding-bottom:4px;
-  margin-bottom:20px;
-  scrollbar-width:none;
-}
+.ptabs{display:flex;gap:5px;overflow-x:auto;scrollbar-width:none;margin-bottom:18px;padding-bottom:2px}
 .ptabs::-webkit-scrollbar{display:none}
-.ptab{
-  display:flex;align-items:center;gap:6px;
-  padding:7px 14px;
-  border-radius:100px;
-  border:1px solid var(--glass-border);
-  background:transparent;
-  font-family:inherit;font-size:0.75rem;font-weight:600;
-  color:var(--muted);
-  white-space:nowrap;flex-shrink:0;
-  cursor:pointer;
-  transition:all 0.2s;
-  letter-spacing:0.02em;
-}
-.ptab:hover{border-color:rgba(255,255,255,0.15);color:var(--text)}
-.ptab.active{
-  background:linear-gradient(135deg,rgba(59,130,246,0.2),rgba(139,92,246,0.15));
-  border-color:rgba(59,130,246,0.4);
-  color:var(--blue-bright);
-}
+.ptab{display:flex;align-items:center;gap:5px;padding:6px 13px;border-radius:100px;border:1px solid var(--border);background:transparent;font-family:inherit;font-size:0.73rem;font-weight:700;color:var(--muted);white-space:nowrap;flex-shrink:0;cursor:pointer;transition:all 0.2s;letter-spacing:0.02em}
+.ptab:hover{border-color:var(--border2);color:var(--text)}
+.ptab.active{background:rgba(59,130,246,0.15);border-color:rgba(59,130,246,0.4);color:var(--blue2)}
 
-/* ── SEARCH BAR — fully responsive ── */
-.search-wrap{
-  display:flex;flex-direction:column;gap:10px;
-}
-.url-row{
-  display:flex;
-  align-items:stretch;
-  gap:8px;
-  background:var(--bg2);
-  border:1.5px solid var(--faint);
-  border-radius:var(--r);
-  padding:6px;
-  transition:border-color 0.2s,box-shadow 0.2s;
-}
-.url-row:focus-within{
-  border-color:var(--blue);
-  box-shadow:0 0 0 3px var(--blue-glow),0 0 20px rgba(59,130,246,0.1);
-}
-.url-input{
-  flex:1;min-width:0;
-  background:transparent;border:none;outline:none;
-  font-family:'JetBrains Mono',monospace;
-  font-size:0.82rem;color:var(--white);
-  padding:10px 12px;
-}
-.url-input::placeholder{color:var(--muted)}
+/* Search bar — mobile perfect */
+.search-box{display:flex;flex-direction:column;gap:9px}
+.url-wrap{display:flex;align-items:center;background:var(--bg2);border:1.5px solid var(--faint);border-radius:var(--r);padding:5px 5px 5px 14px;transition:border-color 0.2s,box-shadow 0.2s;gap:6px}
+.url-wrap:focus-within{border-color:var(--blue);box-shadow:0 0 0 3px rgba(59,130,246,0.15)}
+.url-inp{flex:1;min-width:0;background:transparent;border:none;outline:none;font-family:'JetBrains Mono',monospace;font-size:0.8rem;color:var(--white);padding:8px 0;line-height:1.4}
+.url-inp::placeholder{color:var(--muted)}
+.url-clear{background:none;border:none;color:var(--muted);font-size:1rem;padding:4px 6px;cursor:pointer;flex-shrink:0;line-height:1;border-radius:4px;transition:color 0.15s}
+.url-clear:hover{color:var(--text)}
+.ctrl-row{display:flex;gap:8px;align-items:stretch}
+.fmt-seg{display:flex;background:var(--bg3);border:1px solid var(--faint);border-radius:var(--rsm);padding:3px;gap:2px;flex-shrink:0}
+.fmt-pill{padding:7px 13px;border-radius:6px;border:none;background:transparent;font-family:inherit;font-size:0.72rem;font-weight:800;color:var(--muted);letter-spacing:0.05em;cursor:pointer;transition:all 0.18s;white-space:nowrap}
+.fmt-pill.active{background:var(--grad);color:white;box-shadow:0 2px 10px rgba(59,130,246,0.3)}
+.go-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;background:var(--grad);border:none;border-radius:var(--r);padding:12px 18px;font-family:inherit;font-size:0.86rem;font-weight:800;color:white;cursor:pointer;position:relative;overflow:hidden;transition:opacity 0.15s,transform 0.1s;letter-spacing:0.02em;min-width:0}
+.go-btn:hover{opacity:0.9;transform:translateY(-1px)}
+.go-btn:active{transform:translateY(0) scale(0.98)}
+.go-btn:disabled{opacity:0.45;cursor:not-allowed;transform:none}
+.go-btn svg{width:15px;height:15px;fill:white;flex-shrink:0}
+.go-spin{width:16px;height:16px;border:2.5px solid rgba(255,255,255,0.3);border-top-color:white;border-radius:50%;animation:spin 0.6s linear infinite;flex-shrink:0;display:none}
+.url-hint{font-size:0.68rem;color:var(--muted);text-align:center;font-family:'JetBrains Mono',monospace;margin-top:6px}
 
-.bottom-row{
-  display:flex;gap:8px;align-items:center;
-}
-.fmt-toggle{
-  display:flex;
-  background:var(--bg3);
-  border:1px solid var(--faint);
-  border-radius:var(--r-sm);
-  padding:3px;gap:2px;
-  flex-shrink:0;
-}
-.fmt-pill{
-  padding:7px 14px;border-radius:7px;border:none;
-  background:transparent;
-  font-family:inherit;font-size:0.75rem;font-weight:700;
-  color:var(--muted);letter-spacing:0.04em;
-  cursor:pointer;transition:all 0.2s;
-}
-.fmt-pill.active{
-  background:linear-gradient(135deg,var(--blue),var(--purple));
-  color:white;box-shadow:0 2px 8px var(--blue-glow);
-}
-.fetch-btn{
-  flex:1;
-  display:flex;align-items:center;justify-content:center;gap:8px;
-  background:linear-gradient(135deg,var(--blue),var(--purple));
-  border:none;border-radius:var(--r);
-  padding:12px 20px;
-  font-family:inherit;font-size:0.88rem;font-weight:700;
-  color:white;cursor:pointer;
-  transition:all 0.2s;
-  position:relative;overflow:hidden;
-  letter-spacing:0.02em;
-}
-.fetch-btn::after{
-  content:'';position:absolute;inset:0;
-  background:rgba(255,255,255,0);
-  transition:background 0.2s;
-}
-.fetch-btn:hover::after{background:rgba(255,255,255,0.1)}
-.fetch-btn:active{transform:scale(0.98)}
-.fetch-btn:disabled{opacity:0.5;cursor:not-allowed;transform:none}
-.fetch-btn svg{width:15px;height:15px;fill:white;flex-shrink:0}
-.fetch-spinner{
-  width:16px;height:16px;
-  border:2.5px solid rgba(255,255,255,0.3);
-  border-top-color:white;
-  border-radius:50%;
-  animation:spin 0.6s linear infinite;
-  flex-shrink:0;display:none;
-}
-.url-hint{
-  font-size:0.7rem;color:var(--muted);
-  text-align:center;margin-top:8px;
-  font-family:'JetBrains Mono',monospace;
-}
-
-/* ── RESULTS ── */
-.results-area{margin-top:16px}
+/* ══════════════════════════════════════
+   RESULTS & CARDS
+══════════════════════════════════════ */
+.results{margin-top:14px}
 
 /* Loading animation */
-.loading-state{
-  padding:20px 0 8px;
-  display:flex;flex-direction:column;gap:12px;
-}
-.loading-progress{
-  height:3px;border-radius:3px;
-  background:var(--bg3);overflow:hidden;margin-bottom:4px;
-}
-.loading-progress-bar{
-  height:100%;border-radius:3px;
-  background:linear-gradient(90deg,var(--blue),var(--purple));
-  animation:progressBar 2s ease-out forwards;
-}
-.loading-label{
-  font-size:0.72rem;color:var(--muted);
-  font-family:'JetBrains Mono',monospace;
-  display:flex;align-items:center;gap:8px;
-}
-.loading-dots span{
-  display:inline-block;width:4px;height:4px;
-  border-radius:50%;background:var(--blue);
-  margin:0 2px;animation:bounce 0.8s infinite;
-}
-.loading-dots span:nth-child(2){animation-delay:0.15s}
-.loading-dots span:nth-child(3){animation-delay:0.3s}
+.load-state{padding:16px 0 4px}
+.load-bar{height:2px;border-radius:2px;background:var(--bg3);overflow:hidden;margin-bottom:10px}
+.load-fill{height:100%;background:var(--grad);animation:progressAnim 2.5s ease-out forwards;border-radius:2px}
+.load-txt{display:flex;align-items:center;gap:8px;font-size:0.7rem;color:var(--muted);font-family:'JetBrains Mono',monospace}
+.dots span{display:inline-block;width:4px;height:4px;border-radius:50%;background:var(--blue2);margin:0 2px;animation:bounce 0.9s ease-in-out infinite}
+.dots span:nth-child(2){animation-delay:0.15s}
+.dots span:nth-child(3){animation-delay:0.3s}
 
-/* Skeleton card */
-.skeleton-card{
-  display:flex;gap:14px;
-  background:var(--glass);
-  border:1px solid var(--glass-border);
-  border-radius:var(--r);
-  padding:16px;
-  margin-bottom:10px;
-}
-.skel-thumb{width:120px;min-width:120px;height:78px;border-radius:var(--r-sm);background:linear-gradient(90deg,var(--bg3) 25%,var(--faint) 50%,var(--bg3) 75%);background-size:200% 100%;animation:shimmer 1.6s infinite}
-.skel-body{flex:1;display:flex;flex-direction:column;gap:10px;padding-top:4px}
-.skel-line{height:11px;border-radius:4px;background:linear-gradient(90deg,var(--bg3) 25%,var(--faint) 50%,var(--bg3) 75%);background-size:200% 100%;animation:shimmer 1.6s infinite}
-.skel-line.w70{width:70%}.skel-line.w50{width:50%}.skel-line.w30{width:30%;height:9px}
+/* Skeleton */
+.skel{display:flex;gap:12px;background:var(--glass);border:1px solid var(--border);border-radius:var(--r);padding:14px;margin-bottom:9px}
+.skel-img{width:114px;min-width:114px;height:72px;border-radius:var(--rsm);background:linear-gradient(90deg,var(--bg3) 25%,var(--faint) 50%,var(--bg3) 75%);background-size:200% 100%;animation:shimmer 1.5s infinite;flex-shrink:0}
+.skel-body{flex:1;display:flex;flex-direction:column;gap:9px;padding-top:4px}
+.skel-l{height:10px;border-radius:4px;background:linear-gradient(90deg,var(--bg3) 25%,var(--faint) 50%,var(--bg3) 75%);background-size:200% 100%;animation:shimmer 1.5s infinite}
+.skel-l.w7{width:70%}.skel-l.w5{width:50%}.skel-l.w3{width:30%;height:8px}
 
 /* Result card */
-.result-card{
-  background:rgba(14,16,24,0.7);
-  backdrop-filter:blur(20px);
-  border:1px solid var(--glass-border);
-  border-radius:var(--r);
-  padding:16px;
-  margin-bottom:10px;
-  animation:cardEnter 0.4s cubic-bezier(0.16,1,0.3,1) both;
-  transition:border-color 0.2s;
-}
-.result-card:hover{border-color:rgba(59,130,246,0.2)}
-.result-card.error-card{border-color:rgba(248,113,113,0.2);background:rgba(248,113,113,0.04)}
+.r-card{background:rgba(12,14,22,0.75);backdrop-filter:blur(20px);border:1px solid var(--border);border-radius:var(--r);padding:14px;margin-bottom:9px;animation:cardIn 0.38s cubic-bezier(0.16,1,0.3,1) both;transition:border-color 0.2s}
+.r-card:hover{border-color:rgba(59,130,246,0.2)}
+.r-card.err-card{border-color:rgba(248,113,113,0.18);background:rgba(248,113,113,0.04)}
 
-.card-row{display:flex;gap:14px;align-items:flex-start}
-.card-thumb{
-  width:128px;min-width:128px;height:80px;
-  border-radius:var(--r-sm);overflow:hidden;
-  background:var(--bg3);flex-shrink:0;
-  position:relative;
-}
-.card-thumb img{width:100%;height:100%;object-fit:cover;display:block}
-.thumb-plat{
-  position:absolute;bottom:5px;left:5px;
-  background:rgba(0,0,0,0.75);backdrop-filter:blur(4px);
-  border-radius:5px;padding:2px 7px;
-  font-size:0.6rem;font-weight:700;
-  color:white;letter-spacing:0.07em;text-transform:uppercase;
-}
+.card-row{display:flex;gap:12px;align-items:flex-start}
+.c-thumb{width:120px;min-width:120px;height:76px;border-radius:var(--rsm);overflow:hidden;background:var(--bg3);flex-shrink:0;position:relative}
+.c-thumb img{width:100%;height:100%;object-fit:cover}
+.c-plat{position:absolute;bottom:4px;left:4px;background:rgba(0,0,0,0.75);backdrop-filter:blur(4px);border-radius:4px;padding:2px 6px;font-size:0.58rem;font-weight:700;color:white;letter-spacing:0.07em;text-transform:uppercase}
 .no-thumb{width:100%;height:100%;display:grid;place-items:center;color:var(--faint)}
-.no-thumb svg{width:26px;height:26px;opacity:0.5}
+.no-thumb svg{width:24px;height:24px;opacity:0.45}
+.c-body{flex:1;min-width:0}
+.c-title{font-weight:700;font-size:0.9rem;line-height:1.3;color:var(--white);margin-bottom:6px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.c-meta{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px}
+.c-chip{display:flex;align-items:center;gap:3px;background:var(--glass);border:1px solid var(--border);border-radius:5px;padding:2px 7px;font-size:0.65rem;color:var(--muted);font-family:'JetBrains Mono',monospace}
+.c-actions{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
 
-.card-body{flex:1;min-width:0}
-.card-title{
-  font-weight:700;font-size:0.92rem;
-  line-height:1.35;color:var(--white);
-  margin-bottom:6px;
-  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
-}
-.card-meta{
-  display:flex;flex-wrap:wrap;gap:6px;
-  margin-bottom:12px;
-}
-.meta-chip{
-  display:flex;align-items:center;gap:4px;
-  background:var(--glass);border:1px solid var(--glass-border);
-  border-radius:6px;padding:2px 8px;
-  font-size:0.68rem;font-weight:500;color:var(--muted);
-  font-family:'JetBrains Mono',monospace;
-}
-.card-actions{display:flex;flex-wrap:wrap;gap:7px;align-items:center}
-
-.dl-btn{
-  display:flex;align-items:center;gap:6px;
-  background:linear-gradient(135deg,var(--blue),var(--purple));
-  border:none;border-radius:var(--r-sm);
-  padding:8px 16px;
-  font-family:inherit;font-size:0.78rem;font-weight:700;
-  color:white;cursor:pointer;
-  transition:all 0.2s;
-  position:relative;overflow:hidden;
-}
-.dl-btn::before{
-  content:'';position:absolute;inset:0;
-  background:rgba(255,255,255,0);transition:background 0.2s;
-}
-.dl-btn:hover::before{background:rgba(255,255,255,0.1)}
+.dl-btn{display:flex;align-items:center;gap:5px;background:var(--grad);border:none;border-radius:var(--rsm);padding:7px 14px;font-family:inherit;font-size:0.75rem;font-weight:800;color:white;cursor:pointer;transition:all 0.15s;position:relative;overflow:hidden}
+.dl-btn:hover{opacity:0.88}
 .dl-btn:active{transform:scale(0.97)}
-.dl-btn:disabled{opacity:0.4;cursor:not-allowed}
-.dl-btn.done{background:linear-gradient(135deg,#16a34a,#15803d)}
+.dl-btn:disabled{opacity:0.35;cursor:not-allowed}
+.dl-btn.done{background:var(--grad2)}
 .dl-btn svg{width:12px;height:12px;fill:white;flex-shrink:0}
 
-.q-chip{
-  padding:5px 10px;
-  border:1px solid var(--faint);
-  border-radius:var(--r-sm);
-  background:transparent;
-  font-family:'JetBrains Mono',monospace;
-  font-size:0.68rem;font-weight:700;
-  color:var(--muted);cursor:pointer;
-  transition:all 0.15s;
-}
-.q-chip:hover{border-color:var(--blue);color:var(--blue-bright)}
-.q-chip.active{border-color:var(--blue);color:var(--blue-bright);background:rgba(59,130,246,0.12)}
+.q-btn{padding:5px 9px;border:1px solid var(--faint);border-radius:var(--rsm);background:transparent;font-family:'JetBrains Mono',monospace;font-size:0.65rem;font-weight:700;color:var(--muted);cursor:pointer;transition:all 0.15s}
+.q-btn:hover{border-color:var(--blue);color:var(--blue2)}
+.q-btn.active{border-color:var(--blue);color:var(--blue2);background:rgba(59,130,246,0.1)}
 
-.card-status{
-  font-size:0.72rem;font-family:'JetBrains Mono',monospace;
-  display:flex;align-items:center;gap:6px;
-}
-.card-status.dl{color:var(--orange)}
-.card-status.ok{color:var(--green)}
-.card-status.err{color:var(--red)}
-.tiny-spin{
-  width:11px;height:11px;
-  border:2px solid rgba(251,146,60,0.3);
-  border-top-color:var(--orange);
-  border-radius:50%;animation:spin 0.6s linear infinite;
-}
+.c-status{font-size:0.7rem;font-family:'JetBrains Mono',monospace;display:flex;align-items:center;gap:5px}
+.c-status.dl{color:var(--orange)}.c-status.ok{color:var(--green)}.c-status.err{color:var(--red)}
+.tiny-spin{width:10px;height:10px;border:2px solid rgba(251,146,60,0.3);border-top-color:var(--orange);border-radius:50%;animation:spin 0.6s linear infinite}
+.err-msg{font-size:0.76rem;color:var(--red);margin-top:3px;line-height:1.5}
+.err-url{font-size:0.63rem;color:var(--muted);word-break:break-all;margin-top:2px;font-family:'JetBrains Mono',monospace}
 
-.error-msg{font-size:0.78rem;color:var(--red);margin-top:4px;line-height:1.5}
-.error-url{font-size:0.65rem;color:var(--muted);word-break:break-all;margin-top:3px;font-family:'JetBrains Mono',monospace}
+.dlall-btn{width:100%;margin-top:10px;padding:12px;background:var(--glass);border:1px solid var(--border);border-radius:var(--r);font-family:inherit;font-size:0.82rem;font-weight:700;color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:all 0.2s}
+.dlall-btn:hover{border-color:var(--blue);color:var(--blue2);background:var(--blue-g)}
+.dlall-btn:disabled{opacity:0.35;cursor:not-allowed}
 
-/* Download all */
-.dl-all-row{margin-top:12px}
-.dl-all-btn{
-  width:100%;padding:13px;
-  background:var(--glass);
-  border:1px solid var(--glass-border);
-  border-radius:var(--r);
-  font-family:inherit;font-size:0.85rem;font-weight:700;
-  color:var(--text);cursor:pointer;
-  display:flex;align-items:center;justify-content:center;gap:8px;
-  transition:all 0.2s;
-}
-.dl-all-btn:hover{border-color:var(--blue);color:var(--blue-bright);background:rgba(59,130,246,0.08)}
-.dl-all-btn:disabled{opacity:0.4;cursor:not-allowed}
-.dl-all-btn svg{width:15px;height:15px;fill:currentColor}
+/* ══════════════════════════════════════
+   CONTENT LAYOUT
+══════════════════════════════════════ */
+.content-wrap{max-width:1280px;margin:0 auto;padding:48px 20px 64px;display:grid;grid-template-columns:1fr 300px;gap:28px;align-items:start}
+@media(max-width:960px){.content-wrap{grid-template-columns:1fr}.sidebar{display:none}}
+.sec-label{font-size:0.65rem;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue2);margin-bottom:10px}
+.sec-title{font-size:1.35rem;font-weight:800;color:var(--white);letter-spacing:-0.02em;margin-bottom:7px}
+.sec-sub{font-size:0.84rem;color:var(--muted);margin-bottom:26px;line-height:1.6;max-width:560px}
+
+/* Platform grid */
+.plat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:9px;margin-bottom:40px}
+.plat-card{background:var(--glass);border:1px solid var(--border);border-radius:var(--r);padding:16px 12px;text-align:center;cursor:pointer;transition:all 0.2s}
+.plat-card:hover{border-color:rgba(59,130,246,0.3);background:var(--blue-g);transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.3)}
+.plat-emoji{font-size:1.7rem;display:block;margin-bottom:8px;line-height:1}
+.plat-name{font-size:0.78rem;font-weight:700;color:var(--text);margin-bottom:2px}
+.plat-desc{font-size:0.65rem;color:var(--muted)}
+
+/* Steps */
+.steps{display:flex;flex-direction:column;gap:10px;margin-bottom:40px}
+.step{display:flex;gap:14px;background:var(--glass);border:1px solid var(--border);border-radius:var(--r);padding:16px;transition:border-color 0.2s}
+.step:hover{border-color:rgba(59,130,246,0.18)}
+.step-n{width:34px;height:34px;flex-shrink:0;background:var(--grad);border-radius:50%;display:grid;place-items:center;font-size:0.8rem;font-weight:900;color:white}
+.step h4{font-size:0.86rem;font-weight:700;color:var(--white);margin-bottom:2px}
+.step p{font-size:0.78rem;color:var(--muted);line-height:1.5}
+
+/* FAQ */
+.faq{margin-bottom:40px}
+.faq-item{border-bottom:1px solid var(--faint)}
+.faq-q{width:100%;background:none;border:none;text-align:left;padding:14px 0;display:flex;justify-content:space-between;align-items:center;gap:10px;font-family:inherit;font-size:0.86rem;font-weight:700;color:var(--text);cursor:pointer;transition:color 0.15s}
+.faq-q:hover{color:var(--white)}
+.faq-arr{font-size:0.6rem;color:var(--muted);transition:transform 0.25s;flex-shrink:0}
+.faq-item.open .faq-arr{transform:rotate(180deg)}
+.faq-ans{max-height:0;overflow:hidden;transition:max-height 0.32s ease}
+.faq-item.open .faq-ans{max-height:300px}
+.faq-ans p{font-size:0.8rem;color:var(--muted);line-height:1.7;padding-bottom:14px}
+
+/* Sidebar */
+.sidebar{position:sticky;top:80px}
+.sid-box{background:var(--glass);border:1px solid var(--border);border-radius:var(--r);padding:18px;margin-bottom:12px}
+.sid-box h4{font-size:0.67rem;font-weight:800;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:12px}
+.feat-item{display:flex;align-items:center;gap:8px;font-size:0.78rem;color:var(--text);margin-bottom:8px}
+.feat-check{width:16px;height:16px;border-radius:50%;background:var(--grad);display:grid;place-items:center;flex-shrink:0;font-size:0.55rem;color:white;font-weight:900}
+.tag-cloud{display:flex;flex-wrap:wrap;gap:5px}
+.tag{background:var(--bg3);border:1px solid var(--faint);border-radius:100px;padding:3px 9px;font-size:0.65rem;font-weight:600;color:var(--muted)}
 
 /* ══════════════════════════════════════
    AD SLOTS
 ══════════════════════════════════════ */
-.ad-slot{
-  background:var(--glass);
-  border:1px dashed var(--faint);
-  border-radius:var(--r);
-  display:flex;align-items:center;justify-content:center;
-  font-size:0.68rem;color:var(--muted);
-  letter-spacing:0.08em;text-transform:uppercase;
-  margin:24px auto;
-}
-.ad-slot-banner{height:90px;max-width:728px}
-.ad-slot-rect{height:250px;max-width:300px}
+.ad-slot{background:var(--glass);border:1px dashed var(--faint);border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-size:0.65rem;color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;margin:20px auto}
+.ad-banner{height:90px;max-width:728px;width:100%}
+.ad-rect{height:250px;max-width:300px;width:100%}
+.ad-mobile{height:60px;max-width:100%;width:100%}
+
+/* ══════════════════════════════════════
+   PLATFORM HERO PAGES
+══════════════════════════════════════ */
+.plat-hero{padding:48px 20px 56px;text-align:center;position:relative;overflow:hidden}
+.plat-hero-inner{max-width:680px;margin:0 auto;position:relative}
+.plat-icon{width:70px;height:70px;border-radius:18px;display:grid;place-items:center;font-size:2rem;margin:0 auto 18px;animation:fadeUp 0.4s ease both}
+.plat-hero h1{font-size:clamp(1.7rem,4.5vw,3rem);font-weight:900;color:var(--white);letter-spacing:-0.03em;margin-bottom:10px;animation:fadeUp 0.4s 0.08s ease both}
+.plat-hero p{font-size:0.92rem;color:var(--muted);max-width:460px;margin:0 auto 30px;line-height:1.7;animation:fadeUp 0.4s 0.16s ease both}
+.plat-dl-wrap{max-width:680px;margin:0 auto;animation:scaleIn 0.5s 0.2s ease both}
+
+/* ══════════════════════════════════════
+   BLOG SYSTEM
+══════════════════════════════════════ */
+.blog-wrap{max-width:1280px;margin:0 auto;padding:48px 20px 64px}
+.blog-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;flex-wrap:wrap;gap:12px}
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px;margin-bottom:40px}
+.blog-card{background:rgba(12,14,22,0.8);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;cursor:pointer;transition:all 0.22s}
+.blog-card:hover{border-color:rgba(59,130,246,0.25);transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,0.35)}
+.blog-cover{height:180px;background:var(--bg3);overflow:hidden;position:relative}
+.blog-cover img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s}
+.blog-card:hover .blog-cover img{transform:scale(1.04)}
+.blog-cover-placeholder{width:100%;height:100%;display:grid;place-items:center;font-size:3rem}
+.blog-cat{position:absolute;top:10px;left:10px;background:var(--grad);border-radius:100px;padding:3px 10px;font-size:0.62rem;font-weight:800;color:white;letter-spacing:0.06em;text-transform:uppercase}
+.blog-body{padding:18px}
+.blog-title{font-size:1rem;font-weight:800;color:var(--white);margin-bottom:7px;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.blog-excerpt{font-size:0.78rem;color:var(--muted);line-height:1.6;margin-bottom:12px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.blog-meta{display:flex;align-items:center;justify-content:space-between;font-size:0.68rem;color:var(--muted);font-family:'JetBrains Mono',monospace}
+.blog-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
+.blog-tag{background:var(--bg3);border:1px solid var(--faint);border-radius:100px;padding:2px 8px;font-size:0.63rem;color:var(--muted)}
+
+/* Blog post view */
+.blog-post-wrap{max-width:760px;margin:0 auto;padding:48px 20px 64px}
+.post-cover{border-radius:var(--r);overflow:hidden;margin-bottom:28px;max-height:360px}
+.post-cover img{width:100%;object-fit:cover}
+.post-title{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:900;color:var(--white);letter-spacing:-0.03em;margin-bottom:14px;line-height:1.2}
+.post-meta-bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid var(--faint)}
+.post-meta-item{font-size:0.72rem;color:var(--muted);font-family:'JetBrains Mono',monospace;display:flex;align-items:center;gap:5px}
+.post-content{font-size:0.9rem;color:var(--muted);line-height:1.9;white-space:pre-wrap}
+.post-content h2,.post-content h3{color:var(--white);font-weight:800;margin:24px 0 10px;letter-spacing:-0.02em}
+.post-content strong{color:var(--text)}
+.post-content a{color:var(--blue2)}
+.post-actions{display:flex;gap:8px;margin-top:28px}
+.back-btn,.edit-btn,.del-btn{display:flex;align-items:center;gap:6px;padding:9px 18px;border-radius:var(--rsm);font-family:inherit;font-size:0.8rem;font-weight:700;cursor:pointer;border:1px solid var(--border);background:var(--glass);color:var(--muted);transition:all 0.15s}
+.back-btn:hover{color:var(--text);border-color:var(--border2)}
+.edit-btn{border-color:rgba(59,130,246,0.3);color:var(--blue2);background:var(--blue-g)}
+.edit-btn:hover{border-color:var(--blue)}
+.del-btn{border-color:rgba(248,113,113,0.25);color:var(--red);background:rgba(248,113,113,0.06)}
+.del-btn:hover{background:rgba(248,113,113,0.12)}
+
+/* Blog editor */
+.editor-wrap{max-width:860px;margin:0 auto;padding:40px 20px 64px}
+.editor-card{background:rgba(12,14,22,0.9);border:1px solid var(--border);border-radius:var(--rxl);padding:32px}
+.form-row{margin-bottom:18px}
+.form-label{display:block;font-size:0.74rem;font-weight:700;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:7px}
+.form-input{width:100%;background:var(--bg2);border:1.5px solid var(--faint);border-radius:var(--rsm);padding:10px 14px;color:var(--white);font-family:inherit;font-size:0.88rem;outline:none;transition:border-color 0.2s}
+.form-input:focus{border-color:var(--blue)}
+.form-input::placeholder{color:var(--muted)}
+textarea.form-input{resize:vertical;line-height:1.6;min-height:120px}
+#editorContent{min-height:320px;font-family:'JetBrains Mono',monospace;font-size:0.82rem;line-height:1.8}
+.form-row-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:600px){.form-row-2{grid-template-columns:1fr}}
+.editor-btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.btn-primary{display:flex;align-items:center;gap:6px;padding:11px 22px;background:var(--grad);border:none;border-radius:var(--rsm);font-family:inherit;font-size:0.84rem;font-weight:800;color:white;cursor:pointer;transition:opacity 0.15s}
+.btn-primary:hover{opacity:0.88}
+.btn-ghost{display:flex;align-items:center;gap:6px;padding:11px 20px;background:var(--glass);border:1px solid var(--border);border-radius:var(--rsm);font-family:inherit;font-size:0.84rem;font-weight:700;color:var(--muted);cursor:pointer;transition:all 0.15s}
+.btn-ghost:hover{color:var(--text);border-color:var(--border2)}
+
+/* Blog categories filter */
+.cat-filter{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:24px}
+.cat-btn{padding:5px 12px;border-radius:100px;border:1px solid var(--border);background:transparent;font-family:inherit;font-size:0.73rem;font-weight:700;color:var(--muted);cursor:pointer;transition:all 0.15s}
+.cat-btn:hover{border-color:var(--border2);color:var(--text)}
+.cat-btn.active{background:var(--blue-g);border-color:rgba(59,130,246,0.35);color:var(--blue2)}
+.no-blogs{text-align:center;padding:60px 20px;color:var(--muted);font-size:0.9rem}
+.no-blogs .nb-icon{font-size:3rem;margin-bottom:14px}
+
+/* ══════════════════════════════════════
+   TEXT PAGES
+══════════════════════════════════════ */
+.text-page{max-width:780px;margin:0 auto;padding:48px 20px 64px;animation:fadeUp 0.4s ease both}
+.text-page h1{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;color:var(--white);letter-spacing:-0.03em;margin-bottom:8px}
+.text-page .pg-meta{font-size:0.72rem;color:var(--muted);font-family:'JetBrains Mono',monospace;margin-bottom:32px;padding-bottom:20px;border-bottom:1px solid var(--faint)}
+.text-page h2{font-size:1.1rem;font-weight:800;color:var(--white);margin:26px 0 9px}
+.text-page p,.text-page li{font-size:0.86rem;line-height:1.8;color:var(--muted);margin-bottom:8px}
+.text-page ul,.text-page ol{padding-left:20px}
+.text-page a{color:var(--blue2)}
+.text-page a:hover{text-decoration:underline}
+
+/* Contact form */
+.contact-form{background:var(--glass);border:1px solid var(--border);border-radius:var(--rxl);padding:32px;margin-top:24px}
 
 /* ══════════════════════════════════════
    COOKIES MODAL
 ══════════════════════════════════════ */
-.overlay{
-  position:fixed;inset:0;
-  background:rgba(0,0,0,0.7);
-  backdrop-filter:blur(8px);
-  z-index:1000;
-  display:grid;place-items:center;
-  padding:20px;
-  opacity:0;pointer-events:none;
-  transition:opacity 0.25s;
-}
-.overlay.open{opacity:1;pointer-events:all}
-.modal{
-  background:rgba(14,16,24,0.98);
-  backdrop-filter:blur(32px);
-  border:1px solid var(--glass-border);
-  border-radius:var(--r-xl);
-  padding:32px;
-  max-width:500px;width:100%;
-  box-shadow:0 20px 60px rgba(0,0,0,0.5);
-  transform:scale(0.94);transition:transform 0.3s cubic-bezier(0.16,1,0.3,1);
-}
-.overlay.open .modal{transform:scale(1)}
-.modal-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px}
-.modal h3{font-size:1.15rem;font-weight:800;color:var(--white)}
-.modal-close{
-  background:var(--glass);border:1px solid var(--glass-border);
-  border-radius:8px;width:32px;height:32px;
-  display:grid;place-items:center;cursor:pointer;
-  color:var(--muted);font-size:1rem;flex-shrink:0;
-  transition:all 0.15s;
-}
-.modal-close:hover{color:var(--white);border-color:rgba(255,255,255,0.2)}
-.modal p{font-size:0.83rem;color:var(--muted);line-height:1.7;margin-bottom:16px}
-
-.modal-status{
-  display:flex;align-items:center;gap:10px;
-  background:var(--glass);border:1px solid var(--glass-border);
-  border-radius:var(--r-sm);padding:10px 14px;
-  font-size:0.78rem;color:var(--muted);margin-bottom:16px;
-}
-.modal-status .dot{width:8px;height:8px;border-radius:50%;background:var(--faint);flex-shrink:0}
-.modal-status .dot.on{background:var(--green);box-shadow:0 0 8px var(--green-glow)}
-
-.modal ol{padding-left:18px;font-size:0.82rem;line-height:2.1;color:var(--muted)}
-.modal ol li strong{color:var(--text)}
-.modal ol a{color:var(--blue-bright);text-decoration:none}
-.modal ol a:hover{text-decoration:underline}
-
-.modal-btns{display:flex;gap:8px;margin-top:20px;flex-wrap:wrap}
-.modal-btn{
-  flex:1;min-width:110px;padding:11px 16px;
-  border-radius:var(--r-sm);border:none;
-  font-family:inherit;font-size:0.82rem;font-weight:700;
-  cursor:pointer;transition:all 0.15s;
-}
-.modal-btn-primary{background:linear-gradient(135deg,var(--blue),var(--purple));color:white}
-.modal-btn-primary:hover{opacity:0.9}
-.modal-btn-danger{background:rgba(248,113,113,0.12);color:var(--red);border:1px solid rgba(248,113,113,0.2)}
-.modal-btn-danger:hover{background:rgba(248,113,113,0.2)}
-.modal-btn-ghost{background:var(--glass);color:var(--muted);border:1px solid var(--glass-border)}
-.modal-btn-ghost:hover{color:var(--text)}
-
-#cookieFileInput{display:none}
-
-/* ══════════════════════════════════════
-   CONTENT SECTIONS
-══════════════════════════════════════ */
-.content-outer{
-  max-width:1200px;margin:0 auto;
-  padding:48px 20px 64px;
-  display:grid;
-  grid-template-columns:1fr 300px;
-  gap:32px;align-items:start;
-}
-@media(max-width:900px){.content-outer{grid-template-columns:1fr}.sidebar-col{display:none}}
-
-.section-title{
-  font-size:1.4rem;font-weight:800;
-  color:var(--white);letter-spacing:-0.02em;
-  margin-bottom:8px;
-}
-.section-sub{font-size:0.85rem;color:var(--muted);margin-bottom:28px;line-height:1.6}
-
-/* Platforms grid */
-.platforms-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(140px,1fr));
-  gap:10px;margin-bottom:40px;
-}
-.plat-card{
-  background:var(--glass);
-  border:1px solid var(--glass-border);
-  border-radius:var(--r);
-  padding:18px 14px;text-align:center;
-  cursor:pointer;transition:all 0.2s;
-}
-.plat-card:hover{
-  border-color:rgba(59,130,246,0.35);
-  background:rgba(59,130,246,0.07);
-  transform:translateY(-3px);
-  box-shadow:0 8px 24px rgba(0,0,0,0.3);
-}
-.plat-emoji{font-size:1.8rem;display:block;margin-bottom:8px;line-height:1}
-.plat-name{font-size:0.8rem;font-weight:700;color:var(--text);margin-bottom:2px}
-.plat-desc{font-size:0.67rem;color:var(--muted)}
-
-/* Steps */
-.steps-list{display:flex;flex-direction:column;gap:12px;margin-bottom:40px}
-.step-item{
-  display:flex;gap:16px;
-  background:var(--glass);border:1px solid var(--glass-border);
-  border-radius:var(--r);padding:18px;
-  transition:border-color 0.2s;
-}
-.step-item:hover{border-color:rgba(59,130,246,0.2)}
-.step-num{
-  width:36px;height:36px;flex-shrink:0;
-  background:linear-gradient(135deg,var(--blue),var(--purple));
-  border-radius:50%;display:grid;place-items:center;
-  font-size:0.82rem;font-weight:800;color:white;
-}
-.step-item h4{font-size:0.88rem;font-weight:700;color:var(--white);margin-bottom:3px}
-.step-item p{font-size:0.8rem;color:var(--muted);line-height:1.5}
-
-/* FAQ */
-.faq-list{margin-bottom:40px}
-.faq-item{border-bottom:1px solid var(--faint)}
-.faq-q{
-  width:100%;background:none;border:none;text-align:left;
-  padding:16px 0;display:flex;justify-content:space-between;
-  align-items:center;gap:12px;
-  font-family:inherit;font-size:0.88rem;font-weight:700;
-  color:var(--text);cursor:pointer;
-  transition:color 0.15s;
-}
-.faq-q:hover{color:var(--white)}
-.faq-arrow{font-size:0.65rem;color:var(--muted);transition:transform 0.25s;flex-shrink:0}
-.faq-item.open .faq-arrow{transform:rotate(180deg)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height 0.35s ease}
-.faq-item.open .faq-a{max-height:300px}
-.faq-a p{font-size:0.82rem;color:var(--muted);line-height:1.7;padding-bottom:16px}
-
-/* Sidebar */
-.sidebar-col{position:sticky;top:82px}
-.sidebar-box{
-  background:var(--glass);border:1px solid var(--glass-border);
-  border-radius:var(--r);padding:20px;margin-bottom:14px;
-}
-.sidebar-box h4{
-  font-size:0.72rem;font-weight:800;
-  color:var(--muted);letter-spacing:0.1em;
-  text-transform:uppercase;margin-bottom:14px;
-}
-.feature-list{display:flex;flex-direction:column;gap:9px}
-.feat-item{
-  display:flex;align-items:center;gap:9px;
-  font-size:0.8rem;color:var(--text);
-}
-.feat-item::before{
-  content:'';width:16px;height:16px;flex-shrink:0;
-  border-radius:50%;
-  background:linear-gradient(135deg,var(--blue),var(--purple));
-  display:grid;place-items:center;
-}
-.feat-check{
-  width:16px;height:16px;border-radius:50%;flex-shrink:0;
-  background:linear-gradient(135deg,var(--blue),var(--purple));
-  display:inline-flex;align-items:center;justify-content:center;
-}
-.feat-check::after{content:'✓';font-size:0.55rem;color:white;font-weight:900}
-.tag-cloud{display:flex;flex-wrap:wrap;gap:6px}
-.tag{
-  background:var(--bg3);border:1px solid var(--faint);
-  border-radius:100px;padding:3px 10px;
-  font-size:0.68rem;font-weight:600;color:var(--muted);
-}
-
-/* ══════════════════════════════════════
-   INDIVIDUAL PLATFORM PAGES
-══════════════════════════════════════ */
-.platform-page{display:none}
-.platform-page.active{display:block}
-
-.plat-hero{
-  position:relative;z-index:1;
-  padding:48px 20px 56px;text-align:center;
-}
-.plat-hero-inner{max-width:680px;margin:0 auto}
-.plat-icon-big{
-  width:72px;height:72px;border-radius:20px;
-  display:grid;place-items:center;font-size:2.2rem;
-  margin:0 auto 20px;
-  animation:fadeUp 0.5s ease both;
-}
-.plat-hero h1{
-  font-size:clamp(1.8rem,5vw,3rem);
-  font-weight:900;color:var(--white);
-  letter-spacing:-0.03em;margin-bottom:12px;
-  animation:fadeUp 0.5s 0.1s ease both;
-}
-.plat-hero p{
-  font-size:0.95rem;color:var(--muted);
-  max-width:460px;margin:0 auto 36px;line-height:1.7;
-  animation:fadeUp 0.5s 0.2s ease both;
-}
-.plat-dl-card{
-  max-width:680px;margin:0 auto;
-  animation:scaleIn 0.5s 0.3s ease both;
-}
-
-/* ══════════════════════════════════════
-   TEXT PAGES (About/Privacy/Terms)
-══════════════════════════════════════ */
-.text-page{
-  max-width:760px;margin:0 auto;
-  padding:48px 20px 64px;
-  animation:fadeUp 0.4s ease both;
-}
-.text-page h1{
-  font-size:2rem;font-weight:900;color:var(--white);
-  letter-spacing:-0.03em;margin-bottom:8px;
-}
-.text-page .meta{
-  font-size:0.75rem;color:var(--muted);
-  font-family:'JetBrains Mono',monospace;
-  margin-bottom:36px;
-  padding-bottom:24px;
-  border-bottom:1px solid var(--faint);
-}
-.text-page h2{
-  font-size:1.1rem;font-weight:700;color:var(--white);
-  margin:28px 0 10px;
-}
-.text-page p,.text-page li{
-  font-size:0.88rem;line-height:1.8;
-  color:var(--muted);margin-bottom:8px;
-}
-.text-page ul,.text-page ol{padding-left:20px}
-.text-page a{color:var(--blue-bright);text-decoration:none}
-.text-page a:hover{text-decoration:underline}
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.72);backdrop-filter:blur(8px);z-index:1000;display:grid;place-items:center;padding:20px;opacity:0;pointer-events:none;transition:opacity 0.22s}
+.modal-overlay.open{opacity:1;pointer-events:all}
+.modal-box{background:rgba(12,14,22,0.98);backdrop-filter:blur(32px);border:1px solid var(--border);border-radius:var(--rxl);padding:30px;max-width:490px;width:100%;box-shadow:0 24px 64px rgba(0,0,0,0.55);transform:scale(0.94);transition:transform 0.28s cubic-bezier(0.16,1,0.3,1)}
+.modal-overlay.open .modal-box{transform:scale(1)}
+.modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.modal-box h3{font-size:1.1rem;font-weight:800;color:var(--white)}
+.modal-close-btn{background:var(--glass);border:1px solid var(--border);border-radius:7px;width:30px;height:30px;display:grid;place-items:center;cursor:pointer;color:var(--muted);font-size:0.9rem;transition:all 0.15s}
+.modal-close-btn:hover{color:var(--white);border-color:var(--border2)}
+.modal-box p{font-size:0.8rem;color:var(--muted);line-height:1.7;margin-bottom:14px}
+.modal-status{display:flex;align-items:center;gap:9px;background:var(--glass);border:1px solid var(--border);border-radius:var(--rsm);padding:9px 13px;font-size:0.75rem;color:var(--muted);margin-bottom:14px}
+.m-dot{width:8px;height:8px;border-radius:50%;background:var(--faint);flex-shrink:0}
+.m-dot.on{background:var(--green);box-shadow:0 0 8px var(--green-g)}
+.modal-box ol{padding-left:17px;font-size:0.8rem;line-height:2.1;color:var(--muted)}
+.modal-box ol li strong{color:var(--text)}
+.modal-box ol a{color:var(--blue2)}
+.modal-btns{display:flex;gap:8px;margin-top:18px;flex-wrap:wrap}
+.m-btn{flex:1;min-width:100px;padding:10px 14px;border-radius:var(--rsm);border:none;font-family:inherit;font-size:0.8rem;font-weight:700;cursor:pointer;transition:all 0.15s}
+.m-btn-p{background:var(--grad);color:white}
+.m-btn-p:hover{opacity:0.88}
+.m-btn-d{background:rgba(248,113,113,0.1);color:var(--red);border:1px solid rgba(248,113,113,0.2)}
+.m-btn-d:hover{background:rgba(248,113,113,0.18)}
+.m-btn-g{background:var(--glass);color:var(--muted);border:1px solid var(--border)}
+.m-btn-g:hover{color:var(--text)}
+#ckFileInp{display:none}
 
 /* ══════════════════════════════════════
    FOOTER
 ══════════════════════════════════════ */
-.site-footer{
-  background:var(--bg1);
-  border-top:1px solid var(--glass-border);
-  padding:40px 20px 24px;
-  position:relative;z-index:1;
-}
-.footer-inner{max-width:1200px;margin:0 auto}
-.footer-grid{
-  display:grid;
-  grid-template-columns:2fr 1fr 1fr 1fr;
-  gap:32px;margin-bottom:32px;
-}
-@media(max-width:700px){.footer-grid{grid-template-columns:1fr 1fr}}
-.footer-brand .site-logo{margin-bottom:12px}
-.footer-brand p{font-size:0.8rem;color:var(--muted);line-height:1.7;max-width:260px}
-.footer-col h5{
-  font-size:0.7rem;font-weight:800;color:var(--muted);
-  letter-spacing:0.1em;text-transform:uppercase;margin-bottom:14px;
-}
-.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
-.footer-col a{
-  font-size:0.8rem;color:var(--muted);cursor:pointer;
-  transition:color 0.15s;
-}
+.site-footer{background:var(--bg1);border-top:1px solid var(--border);padding:40px 20px 24px;position:relative;z-index:1}
+.footer-inner{max-width:1280px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:28px;margin-bottom:28px}
+@media(max-width:720px){.footer-grid{grid-template-columns:1fr 1fr}}
+.footer-brand .logo{margin-bottom:12px}
+.footer-brand p{font-size:0.78rem;color:var(--muted);line-height:1.7;max-width:250px}
+.footer-col h5{font-size:0.67rem;font-weight:800;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:12px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:7px}
+.footer-col a{font-size:0.78rem;color:var(--muted);cursor:pointer;transition:color 0.15s}
 .footer-col a:hover{color:var(--text)}
-.footer-bottom{
-  border-top:1px solid var(--faint);padding-top:20px;
-  display:flex;justify-content:space-between;align-items:center;
-  flex-wrap:wrap;gap:12px;font-size:0.75rem;color:var(--muted);
-}
-.footer-links-row{display:flex;gap:16px}
-.footer-links-row a{color:var(--muted);cursor:pointer;transition:color 0.15s}
-.footer-links-row a:hover{color:var(--text)}
+.footer-bottom{border-top:1px solid var(--faint);padding-top:18px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:0.73rem;color:var(--muted)}
+.footer-btm-links{display:flex;gap:14px}
+.footer-btm-links a{color:var(--muted);cursor:pointer;transition:color 0.15s}
+.footer-btm-links a:hover{color:var(--text)}
 
-/* ══════════════════════════════════════
-   PAGE SHOW/HIDE
-══════════════════════════════════════ */
-.page-section{display:none}
-.page-section.active{display:block}
-.hidden{display:none!important}
+/* Toast */
+#toast{position:fixed;bottom:22px;right:22px;z-index:9999;padding:11px 18px;border-radius:var(--r);font-size:0.78rem;font-weight:600;background:rgba(12,14,22,0.96);backdrop-filter:blur(20px);border:1px solid;transition:all 0.3s;transform:translateY(70px);opacity:0;max-width:310px;pointer-events:none}
+#toast.show{transform:translateY(0);opacity:1}
+
+/* Mobile responsive final */
+@media(max-width:600px){
+  .card-row{flex-direction:column}
+  .c-thumb{width:100%;min-width:unset;height:160px}
+  .c-title{-webkit-line-clamp:3}
+  .hero{padding:44px 16px 52px}
+  .dl-box{padding:16px}
+  .content-wrap{padding:32px 16px 48px}
+  .blog-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .text-page{padding:32px 16px 48px}
+}
 </style>
 </head>
 <body>
 
-<!-- ██████ HEADER ██████ -->
+<!-- ████ HEADER ████ -->
 <header class="site-header">
-  <div class="nav-inner">
-    <a class="site-logo logo-text" onclick="goPage('home')" href="/">
-      <div class="logo-icon">
-        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-      </div>
-      Snap<span>Load</span>
+  <nav class="nav-inner">
+    <a class="logo" onclick="goPage('home')" href="/">
+      <div class="logo-icon"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></div>
+      Snap<em>Load</em>
     </a>
-    <ul class="nav-links" id="navLinks">
-      <li><a id="nav-home"      onclick="goPage('home')"      href="/">Home</a></li>
-      <li><a id="nav-youtube"   onclick="goPage('youtube')"   href="/youtube-downloader">YouTube</a></li>
-      <li><a id="nav-tiktok"    onclick="goPage('tiktok')"    href="/tiktok-downloader">TikTok</a></li>
-      <li><a id="nav-instagram" onclick="goPage('instagram')" href="/instagram-downloader">Instagram</a></li>
-      <li><a id="nav-twitter"   onclick="goPage('twitter')"   href="/twitter-downloader">Twitter</a></li>
-      <li><a id="nav-facebook"  onclick="goPage('facebook')"  href="/facebook-downloader">Facebook</a></li>
-      <li><a id="nav-mp3"       onclick="goPage('mp3')"       href="/mp3-converter">MP3</a></li>
-      <li><a id="nav-about"     onclick="goPage('about')"     href="/about">About</a></li>
+    <ul class="nav-menu" id="navMenu">
+      <li><a id="n-home"      onclick="goPage('home')"      href="/">Home</a></li>
+      <li><a id="n-youtube"   onclick="goPage('youtube')"   href="/youtube-downloader">YouTube</a></li>
+      <li><a id="n-tiktok"    onclick="goPage('tiktok')"    href="/tiktok-downloader">TikTok</a></li>
+      <li><a id="n-instagram" onclick="goPage('instagram')" href="/instagram-downloader">Instagram</a></li>
+      <li><a id="n-twitter"   onclick="goPage('twitter')"   href="/twitter-downloader">Twitter</a></li>
+      <li><a id="n-facebook"  onclick="goPage('facebook')"  href="/facebook-downloader">Facebook</a></li>
+      <li><a id="n-mp3"       onclick="goPage('mp3')"       href="/mp3-converter">MP3</a></li>
+      <li><a id="n-blog"      onclick="goPage('blog')"      href="/blog">Blog</a></li>
+      <li><a id="n-about"     onclick="goPage('about')"     href="/about">About</a></li>
     </ul>
-    <div class="nav-right">
-      <button class="ck-nav-btn" onclick="openModal()">
-        <span class="dot" id="navDot"></span>
-        Cookies
+    <div class="nav-end">
+      <button class="ck-btn-nav" onclick="openCkModal()">
+        <span class="nav-dot" id="navDot"></span> Cookies
       </button>
-      <button class="hamburger" id="hamburger" onclick="toggleDrawer()" aria-label="Menu">
+      <button class="hamburger" id="hamBtn" onclick="toggleDrawer()" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
     </div>
-  </div>
+  </nav>
 </header>
 
-<!-- ██████ MOBILE DRAWER ██████ -->
-<div class="mobile-drawer" id="mobileDrawer">
-  <a onclick="goPage('home');closeDrawer()" href="/"><span class="icon">🏠</span> Home</a>
-  <a onclick="goPage('youtube');closeDrawer()" href="/youtube-downloader"><span class="icon">▶️</span> YouTube Downloader</a>
-  <a onclick="goPage('tiktok');closeDrawer()" href="/tiktok-downloader"><span class="icon">🎵</span> TikTok Downloader</a>
-  <a onclick="goPage('instagram');closeDrawer()" href="/instagram-downloader"><span class="icon">📸</span> Instagram Downloader</a>
-  <a onclick="goPage('twitter');closeDrawer()" href="/twitter-downloader"><span class="icon">🐦</span> Twitter / X</a>
-  <a onclick="goPage('facebook');closeDrawer()" href="/facebook-downloader"><span class="icon">📘</span> Facebook</a>
-  <a onclick="goPage('reddit');closeDrawer()" href="/reddit-downloader"><span class="icon">🟠</span> Reddit</a>
-  <a onclick="goPage('mp3');closeDrawer()" href="/mp3-converter"><span class="icon">🎧</span> MP3 Converter</a>
-  <a onclick="goPage('about');closeDrawer()" href="/about"><span class="icon">ℹ️</span> About</a>
-  <button class="mob-ck-btn" onclick="openModal();closeDrawer()">
-    <span class="dot" id="mobNavDot"></span>
-    YouTube Cookies (Fix Bot Error)
-  </button>
+<!-- ████ MOBILE DRAWER ████ -->
+<div class="mob-drawer" id="mobDrawer">
+  <a onclick="goPage('home');closeDrawer()" href="/"><span>🏠</span> Home</a>
+  <a onclick="goPage('youtube');closeDrawer()" href="/youtube-downloader"><span>▶️</span> YouTube Downloader</a>
+  <a onclick="goPage('tiktok');closeDrawer()" href="/tiktok-downloader"><span>🎵</span> TikTok Downloader</a>
+  <a onclick="goPage('instagram');closeDrawer()" href="/instagram-downloader"><span>📸</span> Instagram</a>
+  <a onclick="goPage('twitter');closeDrawer()" href="/twitter-downloader"><span>🐦</span> Twitter / X</a>
+  <a onclick="goPage('facebook');closeDrawer()" href="/facebook-downloader"><span>📘</span> Facebook</a>
+  <a onclick="goPage('reddit');closeDrawer()" href="/reddit-downloader"><span>🟠</span> Reddit</a>
+  <a onclick="goPage('twitch');closeDrawer()" href="/twitch-downloader"><span>🟣</span> Twitch</a>
+  <a onclick="goPage('vimeo');closeDrawer()" href="/vimeo-downloader"><span>🎬</span> Vimeo</a>
+  <a onclick="goPage('soundcloud');closeDrawer()" href="/soundcloud-downloader"><span>🎧</span> SoundCloud</a>
+  <a onclick="goPage('mp3');closeDrawer()" href="/mp3-converter"><span>🎵</span> MP3 Converter</a>
+  <div class="mob-sep"></div>
+  <a onclick="goPage('blog');closeDrawer()" href="/blog"><span>📝</span> Blog</a>
+  <a onclick="goPage('blog-editor');closeDrawer()"><span>✏️</span> Write Blog Post</a>
+  <div class="mob-sep"></div>
+  <a onclick="goPage('about');closeDrawer()" href="/about"><span>ℹ️</span> About</a>
+  <a onclick="goPage('contact');closeDrawer()" href="/contact"><span>📩</span> Contact</a>
+  <a onclick="goPage('faq');closeDrawer()" href="/faq"><span>❓</span> FAQ</a>
+  <div class="mob-ck">
+    <button class="mob-ck-btn" onclick="openCkModal();closeDrawer()">
+      <span class="nav-dot" id="mobDot"></span> YouTube Cookies
+    </button>
+  </div>
 </div>
 
-<!-- ██████ COOKIES MODAL ██████ -->
-<div class="overlay" id="ckOverlay" onclick="if(event.target===this)closeModal()">
-  <div class="modal">
+<!-- ████ COOKIES MODAL ████ -->
+<div class="modal-overlay" id="ckModal" onclick="if(event.target===this)closeCkModal()">
+  <div class="modal-box">
     <div class="modal-head">
       <h3>🍪 YouTube Cookies</h3>
-      <button class="modal-close" onclick="closeModal()">✕</button>
+      <button class="modal-close-btn" onclick="closeCkModal()">✕</button>
     </div>
-    <p>SnapLoad now tries multiple methods to bypass YouTube's bot check automatically. If downloads still fail, upload your cookies as a backup.</p>
+    <p>SnapLoad auto-tries multiple YouTube client strategies (android_vr, ios, mweb…) before needing cookies. If it still fails, upload your cookies once as a permanent fix.</p>
     <div class="modal-status">
-      <span class="dot" id="modalDot"></span>
-      <span id="modalTxt">Checking status...</span>
+      <span class="m-dot" id="mDot"></span>
+      <span id="mTxt">Checking...</span>
     </div>
     <ol>
-      <li>Open Chrome, go to <a href="https://youtube.com" target="_blank">youtube.com</a> while <strong>logged in</strong></li>
-      <li>Install: <a href="https://chrome.google.com/webstore/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc" target="_blank"><strong>Get cookies.txt LOCALLY</strong></a></li>
-      <li>Click extension icon → <strong>Export</strong> → save the file</li>
-      <li>Upload below — stored on server only, delete anytime</li>
+      <li>Go to <a href="https://youtube.com" target="_blank">youtube.com</a> while <strong>logged into Google</strong></li>
+      <li>Install Chrome extension: <a href="https://chrome.google.com/webstore/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc" target="_blank"><strong>Get cookies.txt LOCALLY</strong></a></li>
+      <li>Click the extension → <strong>Export</strong> → save file</li>
+      <li>Upload below — stored on server, delete anytime</li>
     </ol>
     <div class="modal-btns">
-      <button class="modal-btn modal-btn-primary" onclick="document.getElementById('cookieFileInput').click()">📂 Upload cookies.txt</button>
-      <button class="modal-btn modal-btn-danger hidden" id="delCkBtn" onclick="deleteCookies()">🗑 Remove</button>
-      <button class="modal-btn modal-btn-ghost" onclick="closeModal()">Close</button>
+      <button class="m-btn m-btn-p" onclick="document.getElementById('ckFileInp').click()">📂 Upload cookies.txt</button>
+      <button class="m-btn m-btn-d hidden" id="delCkBtn" onclick="deleteCk()">🗑 Remove</button>
+      <button class="m-btn m-btn-g" onclick="closeCkModal()">Close</button>
     </div>
   </div>
 </div>
-<input type="file" id="cookieFileInput" accept=".txt" onchange="uploadCookies(this)">
+<input type="file" id="ckFileInp" accept=".txt" onchange="uploadCk(this)">
 
-<!-- ██████ MAIN CONTENT ██████ -->
+<!-- ████ PAGES ████ -->
 <main id="mainWrap" style="position:relative;z-index:1">
 
-<!-- ════════════════ HOME PAGE ════════════════ -->
-<div class="page-section active" id="pg-home">
+<!-- ══ HOME ══ -->
+<div class="pg active" id="pg-home">
   <section class="hero">
+    <div class="hero-blob hero-blob1"></div>
+    <div class="hero-blob hero-blob2"></div>
     <div class="hero-inner">
-      <div class="hero-badge">
-        <span class="live-dot"></span>
-        Free · No Signup · 1000+ Sites
-      </div>
-      <h1>Download <span class="grad">Any Video</span><br>From Any Platform</h1>
-      <p class="hero-sub">YouTube, TikTok, Instagram, Twitter, Facebook, Reddit and 1000+ more sites. HD MP4 video or MP3 audio — instantly free.</p>
-
-      <div class="dl-card" id="homeCard">
-        <!-- Platform Tabs -->
+      <div class="hero-badge"><span class="live-dot"></span>Free · No Signup · 1000+ Sites</div>
+      <h1>Download <span class="grad-text">Any Video</span><br>From Any Platform</h1>
+      <p class="hero-sub">YouTube, TikTok, Instagram, Twitter, Facebook, Reddit and 1000+ more sites. HD MP4 or MP3 audio — instantly free.</p>
+      <div class="dl-box glass-card" id="homeBox">
         <div class="ptabs" id="homeTabs">
-          <button class="ptab active" data-ph="Paste any video URL here..." onclick="setTab(this)">🌐 All Sites</button>
-          <button class="ptab" data-ph="Paste YouTube URL... (youtube.com/watch?v=...)" onclick="setTab(this)">▶ YouTube</button>
-          <button class="ptab" data-ph="Paste TikTok URL... (tiktok.com/@user/video/...)" onclick="setTab(this)">♪ TikTok</button>
-          <button class="ptab" data-ph="Paste Instagram URL... (instagram.com/reel/...)" onclick="setTab(this)">◈ Instagram</button>
-          <button class="ptab" data-ph="Paste Twitter/X video URL..." onclick="setTab(this)">𝕏 Twitter</button>
-          <button class="ptab" data-ph="Paste Facebook video URL..." onclick="setTab(this)">f Facebook</button>
-          <button class="ptab" data-ph="Paste Reddit video URL..." onclick="setTab(this)">● Reddit</button>
+          <button class="ptab active" data-ph="Paste any video URL here..." onclick="setTab(this,'home')">🌐 All Sites</button>
+          <button class="ptab" data-ph="youtube.com/watch?v= or youtu.be/..." onclick="setTab(this,'home')">▶ YouTube</button>
+          <button class="ptab" data-ph="tiktok.com/@user/video/..." onclick="setTab(this,'home')">♪ TikTok</button>
+          <button class="ptab" data-ph="instagram.com/reel/ or /p/..." onclick="setTab(this,'home')">◈ Instagram</button>
+          <button class="ptab" data-ph="twitter.com/user/status/..." onclick="setTab(this,'home')">𝕏 Twitter</button>
+          <button class="ptab" data-ph="facebook.com video URL..." onclick="setTab(this,'home')">f Facebook</button>
+          <button class="ptab" data-ph="reddit.com/r/.../comments/..." onclick="setTab(this,'home')">● Reddit</button>
         </div>
-        <!-- Search Bar -->
-        <div class="search-wrap">
-          <div class="url-row" id="homeUrlRow">
-            <input class="url-input" id="homeUrl" type="url" placeholder="Paste any video URL here..." autocomplete="off" spellcheck="false" onkeydown="if(event.key==='Enter')goFetch('home')"/>
+        <div class="search-box">
+          <div class="url-wrap" id="homeWrap">
+            <input class="url-inp" id="homeInp" type="url" placeholder="Paste any video URL here..." autocomplete="off" spellcheck="false" onkeydown="if(event.key==='Enter')fetch_('home')"/>
+            <button class="url-clear" onclick="clearInp('home')" title="Clear">✕</button>
           </div>
-          <div class="bottom-row">
-            <div class="fmt-toggle">
+          <div class="ctrl-row">
+            <div class="fmt-seg">
               <button class="fmt-pill active" data-fmt="video" onclick="setFmt(this,'home')">MP4</button>
               <button class="fmt-pill" data-fmt="audio" onclick="setFmt(this,'home')">MP3</button>
             </div>
-            <button class="fetch-btn" id="homeFetchBtn" onclick="goFetch('home')">
-              <svg id="homeIcon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-              <span class="fetch-spinner" id="homeSpin"></span>
+            <button class="go-btn" id="homeBtn" onclick="fetch_('home')">
+              <svg id="homeIco" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+              <span class="go-spin" id="homeSpin"></span>
               <span id="homeTxt">Download</span>
             </button>
           </div>
         </div>
-        <p class="url-hint">Multiple URLs? Separate with spaces or new lines</p>
-        <div class="results-area" id="homeResults"></div>
+        <p class="url-hint">Paste one or multiple URLs separated by space or new line</p>
+        <div class="results" id="homeRes"></div>
       </div>
     </div>
   </section>
 
   <!-- Ad banner -->
-  <div style="max-width:1200px;margin:0 auto;padding:0 20px">
-    <div class="ad-slot ad-slot-banner">
-      <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXX" data-ad-slot="XXXX" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script> -->
-      Advertisement
-    </div>
+  <div style="max-width:1280px;margin:0 auto;padding:0 20px">
+    <div class="ad-slot ad-banner"><!-- AdSense slot --> Advertisement</div>
   </div>
 
-  <div class="content-outer">
+  <div class="content-wrap">
     <div>
-      <h2 class="section-title">Supported Platforms</h2>
-      <p class="section-sub">Click any platform to start downloading from it instantly.</p>
-      <div class="platforms-grid">
+      <div class="sec-label">Supported Platforms</div>
+      <h2 class="sec-title">Download from 1000+ Sites</h2>
+      <p class="sec-sub">Click any platform card to go to its dedicated download page with detailed instructions.</p>
+      <div class="plat-grid">
         <div class="plat-card" onclick="goPage('youtube')"><span class="plat-emoji">▶️</span><div class="plat-name">YouTube</div><div class="plat-desc">HD · 4K · MP3</div></div>
         <div class="plat-card" onclick="goPage('tiktok')"><span class="plat-emoji">🎵</span><div class="plat-name">TikTok</div><div class="plat-desc">No Watermark</div></div>
         <div class="plat-card" onclick="goPage('instagram')"><span class="plat-emoji">📸</span><div class="plat-name">Instagram</div><div class="plat-desc">Reels · Posts</div></div>
         <div class="plat-card" onclick="goPage('twitter')"><span class="plat-emoji">🐦</span><div class="plat-name">Twitter/X</div><div class="plat-desc">Videos · GIFs</div></div>
         <div class="plat-card" onclick="goPage('facebook')"><span class="plat-emoji">📘</span><div class="plat-name">Facebook</div><div class="plat-desc">Videos · Reels</div></div>
         <div class="plat-card" onclick="goPage('reddit')"><span class="plat-emoji">🟠</span><div class="plat-name">Reddit</div><div class="plat-desc">v.redd.it</div></div>
-        <div class="plat-card" onclick="focusUrl('vimeo.com')"><span class="plat-emoji">🎬</span><div class="plat-name">Vimeo</div><div class="plat-desc">HD Video</div></div>
-        <div class="plat-card" onclick="focusUrl('twitch.tv')"><span class="plat-emoji">🟣</span><div class="plat-name">Twitch</div><div class="plat-desc">Clips · VODs</div></div>
-        <div class="plat-card" onclick="focusUrl('dailymotion.com')"><span class="plat-emoji">🔵</span><div class="plat-name">Dailymotion</div><div class="plat-desc">HD Video</div></div>
-        <div class="plat-card" onclick="focusUrl('soundcloud.com')"><span class="plat-emoji">🎧</span><div class="plat-name">SoundCloud</div><div class="plat-desc">MP3 Audio</div></div>
-        <div class="plat-card" onclick="focusUrl('pinterest.com')"><span class="plat-emoji">📌</span><div class="plat-name">Pinterest</div><div class="plat-desc">Videos</div></div>
-        <div class="plat-card" onclick="focusUrl('streamable.com')"><span class="plat-emoji">▶</span><div class="plat-name">Streamable</div><div class="plat-desc">Videos</div></div>
+        <div class="plat-card" onclick="goPage('twitch')"><span class="plat-emoji">🟣</span><div class="plat-name">Twitch</div><div class="plat-desc">Clips · VODs</div></div>
+        <div class="plat-card" onclick="goPage('vimeo')"><span class="plat-emoji">🎬</span><div class="plat-name">Vimeo</div><div class="plat-desc">HD Video</div></div>
+        <div class="plat-card" onclick="goPage('soundcloud')"><span class="plat-emoji">🎧</span><div class="plat-name">SoundCloud</div><div class="plat-desc">MP3 Audio</div></div>
+        <div class="plat-card" onclick="goPage('mp3')"><span class="plat-emoji">🎵</span><div class="plat-name">MP3 Converter</div><div class="plat-desc">Any Site</div></div>
+        <div class="plat-card" onclick="goPage('mp4')"><span class="plat-emoji">📹</span><div class="plat-name">MP4 Download</div><div class="plat-desc">Any Video</div></div>
+        <div class="plat-card" onclick="setInpPH('home','pinterest.com/pin/...')"><span class="plat-emoji">📌</span><div class="plat-name">Pinterest</div><div class="plat-desc">Videos</div></div>
       </div>
 
-      <!-- Ad mid -->
-      <div class="ad-slot ad-slot-banner">Advertisement</div>
+      <div class="ad-slot ad-banner">Advertisement</div>
 
-      <h2 class="section-title">How to Download Videos</h2>
-      <p class="section-sub">3 simple steps — no account, no software needed.</p>
-      <div class="steps-list">
-        <div class="step-item"><div class="step-num">1</div><div><h4>Copy the video URL</h4><p>Go to YouTube, TikTok, Instagram or any site. Copy the video link from your browser's address bar or the app's share menu.</p></div></div>
-        <div class="step-item"><div class="step-num">2</div><div><h4>Paste & choose format</h4><p>Paste the URL into the box above. Choose MP4 for video or MP3 for audio only. Click <strong>Download</strong>.</p></div></div>
-        <div class="step-item"><div class="step-num">3</div><div><h4>Select quality & save</h4><p>Video info loads with all quality options. Click your preferred resolution — the file downloads automatically.</p></div></div>
+      <div class="sec-label">How It Works</div>
+      <h2 class="sec-title">Download in 3 Simple Steps</h2>
+      <p class="sec-sub">No account needed. No software to install. Works on any device.</p>
+      <div class="steps">
+        <div class="step"><div class="step-n">1</div><div><h4>Copy the Video URL</h4><p>Go to YouTube, TikTok, Instagram or any supported site. Copy the video URL from your browser address bar or app share menu.</p></div></div>
+        <div class="step"><div class="step-n">2</div><div><h4>Paste & Choose Format</h4><p>Paste the URL into the box above. Select MP4 for video or MP3 for audio. Hit the Download button.</p></div></div>
+        <div class="step"><div class="step-n">3</div><div><h4>Select Quality & Save</h4><p>All available quality options appear. Click your preferred resolution — the file saves to your device automatically.</p></div></div>
       </div>
 
-      <h2 class="section-title" style="margin-bottom:20px">Frequently Asked Questions</h2>
-      <div class="faq-list">
-        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Is SnapLoad completely free?<span class="faq-arrow">▼</span></button><div class="faq-a"><p>Yes, SnapLoad is 100% free with no registration, no hidden fees, and no download limits.</p></div></div>
-        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How to download YouTube videos in HD?<span class="faq-arrow">▼</span></button><div class="faq-a"><p>Paste the YouTube URL and click Download. After loading, choose from all available resolutions — up to 4K if the original was uploaded in 4K.</p></div></div>
-        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can I download TikTok without watermark?<span class="faq-arrow">▼</span></button><div class="faq-a"><p>Yes. SnapLoad fetches the original TikTok source file before the watermark overlay is applied, so downloads are completely clean.</p></div></div>
-        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">YouTube says "Sign in to confirm you're not a bot" — how to fix?<span class="faq-arrow">▼</span></button><div class="faq-a"><p>SnapLoad automatically tries multiple bypass methods. If it still fails, click <strong>Cookies</strong> in the nav bar and upload your YouTube cookies.txt file for a permanent fix.</p></div></div>
-        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How to convert YouTube to MP3?<span class="faq-arrow">▼</span></button><div class="faq-a"><p>Paste the YouTube URL, click the <strong>MP3</strong> toggle button, then click Download. The audio track will be extracted as a high-quality MP3.</p></div></div>
-        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Is downloading videos legal?<span class="faq-arrow">▼</span></button><div class="faq-a"><p>Downloading for personal offline use is generally accepted. Redistributing or monetizing downloaded content without permission violates copyright law. Always respect creators.</p></div></div>
-        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What video qualities are available?<span class="faq-arrow">▼</span></button><div class="faq-a"><p>All qualities the video was originally uploaded in — from 144p up to 4K for YouTube. The exact options depend on the source platform and the original upload.</p></div></div>
+      <div class="sec-label">FAQ</div>
+      <h2 class="sec-title" style="margin-bottom:20px">Frequently Asked Questions</h2>
+      <div class="faq" id="homeFaq">
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Is SnapLoad completely free?<span class="faq-arr">▼</span></button><div class="faq-ans"><p>Yes, 100% free with no registration, no hidden fees, and no download limits ever.</p></div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How do I download YouTube videos in 4K?<span class="faq-arr">▼</span></button><div class="faq-ans"><p>Paste the YouTube URL, click Download, then select 2160p or 4K from the quality list. Available if the original was uploaded in 4K.</p></div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can I download TikTok without watermark?<span class="faq-arr">▼</span></button><div class="faq-ans"><p>Yes. SnapLoad fetches the original source file before TikTok's app applies the watermark overlay. Downloads are completely clean and watermark-free.</p></div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">YouTube says "Sign in" or "not a bot" error — how to fix?<span class="faq-arr">▼</span></button><div class="faq-ans"><p>SnapLoad automatically tries android_vr, ios, mweb and other YouTube clients to bypass this. If it still fails after retrying, click the Cookies button in the top navigation and upload your YouTube cookies.txt for a guaranteed fix.</p></div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How to convert YouTube to MP3?<span class="faq-arr">▼</span></button><div class="faq-ans"><p>Paste the YouTube URL, toggle MP3 format, then click Download. The audio track is extracted and converted automatically.</p></div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can I download multiple videos at once?<span class="faq-arr">▼</span></button><div class="faq-ans"><p>Yes! Paste multiple URLs separated by spaces or new lines. All videos load at once and you can download them individually or use the Download All button.</p></div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Is it legal to download videos?<span class="faq-arr">▼</span></button><div class="faq-ans"><p>Downloading for personal offline viewing is generally accepted. Redistributing or monetizing content without permission violates copyright law. Always respect creators' rights.</p></div></div>
       </div>
     </div>
 
-    <!-- Sidebar -->
-    <div class="sidebar-col">
-      <div class="ad-slot ad-slot-rect">Advertisement</div>
-      <div class="sidebar-box">
+    <div class="sidebar">
+      <div class="ad-slot ad-rect" style="margin:0 0 12px">Advertisement</div>
+      <div class="sid-box">
         <h4>Features</h4>
-        <div class="feature-list">
-          <div class="feat-item"><span class="feat-check"></span> HD & 4K video download</div>
-          <div class="feat-item"><span class="feat-check"></span> MP3 audio extraction</div>
-          <div class="feat-item"><span class="feat-check"></span> TikTok no watermark</div>
-          <div class="feat-item"><span class="feat-check"></span> Bulk multi-URL support</div>
-          <div class="feat-item"><span class="feat-check"></span> No registration needed</div>
-          <div class="feat-item"><span class="feat-check"></span> No software to install</div>
-          <div class="feat-item"><span class="feat-check"></span> 1000+ sites supported</div>
-          <div class="feat-item"><span class="feat-check"></span> Auto bot-check bypass</div>
-        </div>
+        <div class="feat-item"><span class="feat-check">✓</span> HD & 4K video download</div>
+        <div class="feat-item"><span class="feat-check">✓</span> MP3 audio extraction</div>
+        <div class="feat-item"><span class="feat-check">✓</span> TikTok no watermark</div>
+        <div class="feat-item"><span class="feat-check">✓</span> Bulk multi-URL download</div>
+        <div class="feat-item"><span class="feat-check">✓</span> No registration needed</div>
+        <div class="feat-item"><span class="feat-check">✓</span> Auto YouTube bot bypass</div>
+        <div class="feat-item"><span class="feat-check">✓</span> 1000+ sites supported</div>
+        <div class="feat-item"><span class="feat-check">✓</span> Mobile friendly</div>
       </div>
-      <div class="sidebar-box">
-        <h4>All Supported Sites</h4>
+      <div class="sid-box">
+        <h4>Supported Sites</h4>
         <div class="tag-cloud">
-          <span class="tag">YouTube</span><span class="tag">TikTok</span><span class="tag">Instagram</span><span class="tag">Twitter/X</span><span class="tag">Facebook</span><span class="tag">Reddit</span><span class="tag">Vimeo</span><span class="tag">Twitch</span><span class="tag">Dailymotion</span><span class="tag">SoundCloud</span><span class="tag">Loom</span><span class="tag">Pinterest</span><span class="tag">Streamable</span><span class="tag">LinkedIn</span><span class="tag">Tumblr</span><span class="tag">Threads</span><span class="tag">1000+ more</span>
+          <span class="tag">YouTube</span><span class="tag">TikTok</span><span class="tag">Instagram</span><span class="tag">Twitter</span><span class="tag">Facebook</span><span class="tag">Reddit</span><span class="tag">Vimeo</span><span class="tag">Twitch</span><span class="tag">Dailymotion</span><span class="tag">SoundCloud</span><span class="tag">Loom</span><span class="tag">Pinterest</span><span class="tag">LinkedIn</span><span class="tag">Streamable</span><span class="tag">1000+</span>
         </div>
       </div>
-      <div class="ad-slot ad-slot-rect">Advertisement</div>
+      <div class="ad-slot ad-rect" style="margin:0">Advertisement</div>
     </div>
   </div>
 </div>
 
-<!-- ════════ PLATFORM PAGES (YouTube / TikTok / Instagram / etc) ════════ -->
-<script>
-const PLATS = {
-  youtube:   { emoji:'▶️', name:'YouTube',    color:'#ff2b2b', bg:'rgba(255,43,43,0.12)',  h1:'YouTube Video Downloader',    sub:'Download YouTube videos in HD, 4K or MP3. All resolutions, fast & free.', ph:'Paste YouTube URL... (youtube.com/watch?v= or youtu.be/...)' },
-  tiktok:    { emoji:'🎵', name:'TikTok',     color:'#00f2ea', bg:'rgba(0,242,234,0.1)',   h1:'TikTok Video Downloader',     sub:'Download TikTok videos without watermark in full HD quality.', ph:'Paste TikTok URL... (tiktok.com/@user/video/...)' },
-  instagram: { emoji:'📸', name:'Instagram',  color:'#e1306c', bg:'rgba(225,48,108,0.1)',  h1:'Instagram Downloader',        sub:'Download Instagram Reels, videos and posts — free, no login.', ph:'Paste Instagram URL... (instagram.com/reel/... or /p/...)' },
-  twitter:   { emoji:'🐦', name:'Twitter/X',  color:'#1d9bf0', bg:'rgba(29,155,240,0.1)', h1:'Twitter / X Video Downloader',sub:'Download Twitter and X videos & GIFs in high quality.',         ph:'Paste Twitter/X URL... (twitter.com/user/status/...)' },
-  facebook:  { emoji:'📘', name:'Facebook',   color:'#1877f2', bg:'rgba(24,119,242,0.1)', h1:'Facebook Video Downloader',   sub:'Download public Facebook videos and Reels instantly.',          ph:'Paste Facebook video URL...' },
-  reddit:    { emoji:'🟠', name:'Reddit',     color:'#ff4500', bg:'rgba(255,69,0,0.1)',   h1:'Reddit Video Downloader',     sub:'Download Reddit videos with audio from v.redd.it links.',      ph:'Paste Reddit URL... (reddit.com/r/.../comments/...)' },
-  mp3:       { emoji:'🎧', name:'MP3',        color:'#8b5cf6', bg:'rgba(139,92,246,0.12)', h1:'YouTube to MP3 Converter',   sub:'Extract MP3 audio from YouTube, SoundCloud and any video URL.', ph:'Paste any URL to extract MP3 audio...' },
-};
-</script>
+<!-- ══ PLATFORM PAGES (generated by JS) ══ -->
+<div id="platPagesWrap"></div>
 
-<!-- Platform page containers generated by JS -->
-<div id="platform-pages"></div>
+<!-- ══ BLOG LIST ══ -->
+<div class="pg" id="pg-blog">
+  <div class="blog-wrap">
+    <div class="blog-top">
+      <div>
+        <div class="sec-label">SnapLoad Blog</div>
+        <h1 class="sec-title" style="margin-bottom:0">Tips, Guides & News</h1>
+      </div>
+      <button class="btn-primary" onclick="goPage('blog-editor')">
+        <svg style="width:14px;height:14px;fill:white" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+        Write Post
+      </button>
+    </div>
+    <div class="cat-filter" id="catFilter"></div>
+    <div class="blog-grid" id="blogGrid">
+      <div class="no-blogs"><div class="nb-icon">📝</div><p>Loading posts...</p></div>
+    </div>
+  </div>
+</div>
 
-<!-- ════════ TEXT PAGES ════════ -->
-<div class="page-section" id="pg-about">
+<!-- ══ BLOG POST VIEW ══ -->
+<div class="pg" id="pg-blog-post">
+  <div class="blog-post-wrap" id="blogPostContent"></div>
+</div>
+
+<!-- ══ BLOG EDITOR ══ -->
+<div class="pg" id="pg-blog-editor">
+  <div class="editor-wrap">
+    <div style="margin-bottom:20px">
+      <div class="sec-label">Blog Management</div>
+      <h1 class="sec-title" id="editorHeading">Write New Post</h1>
+    </div>
+    <div class="editor-card">
+      <input type="hidden" id="editSlug" value="">
+      <div class="form-row">
+        <label class="form-label">Post Title *</label>
+        <input class="form-input" id="edTitle" type="text" placeholder="e.g. How to Download YouTube Videos in 4K">
+      </div>
+      <div class="form-row">
+        <label class="form-label">Short Excerpt (for SEO & cards)</label>
+        <textarea class="form-input" id="edExcerpt" rows="2" placeholder="Brief 1-2 sentence summary of this post..."></textarea>
+      </div>
+      <div class="form-row-2">
+        <div class="form-row" style="margin-bottom:0">
+          <label class="form-label">Category</label>
+          <select class="form-input" id="edCategory">
+            <option>General</option><option>YouTube Tips</option><option>TikTok Guide</option>
+            <option>Instagram</option><option>How-To</option><option>News</option>
+            <option>MP3 & Audio</option><option>Privacy & Legal</option>
+          </select>
+        </div>
+        <div class="form-row" style="margin-bottom:0">
+          <label class="form-label">Author</label>
+          <input class="form-input" id="edAuthor" type="text" value="SnapLoad Team">
+        </div>
+      </div>
+      <div class="form-row" style="margin-top:18px">
+        <label class="form-label">Tags (comma separated)</label>
+        <input class="form-input" id="edTags" type="text" placeholder="youtube, download, HD, free">
+      </div>
+      <div class="form-row">
+        <label class="form-label">Cover Image URL (optional)</label>
+        <input class="form-input" id="edCover" type="url" placeholder="https://...">
+      </div>
+      <div class="form-row">
+        <label class="form-label">Content * (supports markdown-like formatting)</label>
+        <textarea class="form-input" id="editorContent" placeholder="Write your full blog post content here...&#10;&#10;You can use:&#10;## Heading 2&#10;### Heading 3&#10;**bold text**&#10;Regular paragraphs&#10;&#10;Separate paragraphs with blank lines."></textarea>
+      </div>
+      <div class="editor-btns">
+        <button class="btn-primary" onclick="savePost()">
+          <svg style="width:14px;height:14px;fill:white" viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2zM17 21v-8H7v8M7 3v5h8"/></svg>
+          <span id="savePostTxt">Publish Post</span>
+        </button>
+        <button class="btn-ghost" onclick="goPage('blog')">← Back to Blog</button>
+        <button class="btn-ghost" onclick="previewPost()">👁 Preview</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ ABOUT ══ -->
+<div class="pg" id="pg-about">
   <div class="text-page">
     <h1>About SnapLoad</h1>
-    <p class="meta">Free Video Downloader — Powered by yt-dlp open-source engine</p>
+    <p class="pg-meta">Free Video Downloader — Powered by yt-dlp open-source engine</p>
     <h2>What is SnapLoad?</h2>
-    <p>SnapLoad is a free online video downloader supporting YouTube, TikTok, Instagram, Twitter, Facebook, Reddit and over 1000 other websites. No registration, no software install — just paste, click, download.</p>
+    <p>SnapLoad is a free, fast online video downloader supporting YouTube, TikTok, Instagram, Twitter, Facebook, Reddit and over 1000 other websites. No registration, no software install — paste a URL, click download, done.</p>
     <h2>How It Works</h2>
-    <p>SnapLoad uses <strong>yt-dlp</strong>, the leading open-source video extraction engine. When you paste a URL, our server fetches the video metadata and stream URLs using multiple client strategies to bypass bot checks — automatically. The file is served directly to your browser.</p>
-    <h2>Cookie-Free Bot Bypass</h2>
-    <p>SnapLoad automatically tries Android, iOS, and web-embedded YouTube clients before falling back to cookie-based auth. Most downloads work without any cookies at all.</p>
+    <p>SnapLoad is powered by <strong style="color:var(--text)">yt-dlp</strong>, the industry-leading open-source video extraction engine. Your URL is processed server-side — we automatically try multiple YouTube client strategies (android_vr, ios, mweb, web_embedded) to bypass bot detection without cookies in most cases.</p>
+    <h2>YouTube Bot-Check Bypass</h2>
+    <p>We try android_vr → android_embedded → android → ios → mweb → web_embedded clients in sequence. Most YouTube videos download successfully without any cookies. The cookie upload feature is a fallback for edge cases.</p>
     <h2>Privacy</h2>
-    <p>We do not log URLs, store downloaded videos beyond your session, or share data with third parties. Files are automatically deleted after serving.</p>
+    <p>We do not log URLs you paste, store downloaded videos beyond your session, or share data with third parties. Downloaded files are automatically deleted after serving.</p>
+    <h2>Supported Platforms</h2>
+    <p>1000+ sites via yt-dlp including YouTube, TikTok, Instagram, Twitter/X, Facebook, Reddit, Vimeo, Twitch, Dailymotion, SoundCloud, Pinterest, LinkedIn, Tumblr, Streamable, Loom, and many more.</p>
     <h2>Disclaimer</h2>
-    <p>SnapLoad is for personal use only. Always respect copyright laws and platform Terms of Service.</p>
+    <p>SnapLoad is for personal, non-commercial use only. Always respect copyright laws and the terms of service of the platforms you download from.</p>
   </div>
 </div>
 
-<div class="page-section" id="pg-privacy">
+<!-- ══ CONTACT ══ -->
+<div class="pg" id="pg-contact">
+  <div class="text-page">
+    <h1>Contact Us</h1>
+    <p class="pg-meta">We'd love to hear from you</p>
+    <p>Have a question, suggestion, or found a bug? Fill out the form below and we'll get back to you as soon as possible.</p>
+    <div class="contact-form">
+      <div class="form-row"><label class="form-label">Your Name</label><input class="form-input" id="cName" type="text" placeholder="John Doe"></div>
+      <div class="form-row"><label class="form-label">Email Address</label><input class="form-input" id="cEmail" type="email" placeholder="john@example.com"></div>
+      <div class="form-row">
+        <label class="form-label">Subject</label>
+        <select class="form-input" id="cSubject">
+          <option>General Inquiry</option><option>Bug Report</option><option>Feature Request</option><option>DMCA / Copyright</option><option>Business</option>
+        </select>
+      </div>
+      <div class="form-row"><label class="form-label">Message</label><textarea class="form-input" id="cMsg" rows="5" placeholder="Describe your question or issue in detail..."></textarea></div>
+      <button class="btn-primary" onclick="submitContact()">Send Message</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ FAQ PAGE ══ -->
+<div class="pg" id="pg-faq">
+  <div class="text-page" style="max-width:860px">
+    <h1>Frequently Asked Questions</h1>
+    <p class="pg-meta">Everything you need to know about SnapLoad</p>
+    <div class="faq">
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Is SnapLoad free forever?<span class="faq-arr">▼</span></button><div class="faq-ans"><p>Yes. SnapLoad is and will always be free. We sustain ourselves through non-intrusive advertising.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do I need to create an account?<span class="faq-arr">▼</span></button><div class="faq-ans"><p>No account required. Just paste a URL and download — completely anonymous.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What is the maximum video quality available?<span class="faq-arr">▼</span></button><div class="faq-ans"><p>Up to 4K (2160p) for YouTube if the original was uploaded in 4K. TikTok and Instagram are typically 1080p maximum as that's the platform limit.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Why does YouTube download sometimes fail?<span class="faq-arr">▼</span></button><div class="faq-ans"><p>YouTube periodically changes its systems to block automated access. SnapLoad tries 7 different client strategies automatically. If all fail, uploading your YouTube cookies.txt solves it permanently. Click the Cookies button in the navigation bar.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Is the cookies.txt file safe to upload?<span class="faq-arr">▼</span></button><div class="faq-ans"><p>Your cookies.txt is stored on the server only to make YouTube API requests on your behalf. It is not shared with anyone. You can delete it anytime via the Cookies button. For maximum safety, use a secondary Google account.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How do I get cookies.txt from Chrome?<span class="faq-arr">▼</span></button><div class="faq-ans"><p>1) Install the "Get cookies.txt LOCALLY" Chrome extension. 2) Go to youtube.com while logged in. 3) Click the extension icon → Export. 4) Upload the saved .txt file using the Cookies button on SnapLoad.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can I download Instagram Reels?<span class="faq-arr">▼</span></button><div class="faq-ans"><p>Yes. Paste any public Instagram Reel or post URL. Private accounts cannot be downloaded as they require authentication.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Does SnapLoad work on mobile?<span class="faq-arr">▼</span></button><div class="faq-ans"><p>Yes, SnapLoad is fully responsive and works on all smartphones and tablets. On mobile, after clicking download you may need to long-press the video → Save Video.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Is it legal to download YouTube videos?<span class="faq-arr">▼</span></button><div class="faq-ans"><p>Downloading for personal offline viewing is generally tolerated in most regions. Re-uploading or monetizing content without permission violates copyright law. SnapLoad is for personal use only.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What video formats are supported?<span class="faq-arr">▼</span></button><div class="faq-ans"><p>MP4 for video (most compatible format) and MP3 for audio extraction. yt-dlp automatically merges the best video and audio streams for you.</p></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ PRIVACY ══ -->
+<div class="pg" id="pg-privacy">
   <div class="text-page">
     <h1>Privacy Policy</h1>
-    <p class="meta">Last updated: January 2025</p>
+    <p class="pg-meta">Last updated: January 2025</p>
     <h2>Information We Collect</h2>
-    <p>SnapLoad processes URLs you submit to fetch and serve video files. URLs are not stored after your session ends. We do not collect personal information.</p>
-    <h2>Cookies & Storage</h2>
-    <p>We use only functional cookies. If you upload a YouTube cookies.txt file, it is stored on the server solely for download functionality and can be deleted by you at any time via the Cookies button.</p>
-    <h2>Advertising</h2>
-    <p>We use Google AdSense for advertisements. Google may use cookies to serve relevant ads. You can opt out via <a href="https://www.google.com/settings/ads" target="_blank">Google Ads Settings</a>.</p>
+    <p>SnapLoad processes video URLs you submit temporarily to fetch and serve video files. These URLs are not logged or stored after your session ends. We do not collect personal identification information.</p>
+    <h2>Cookies & Local Storage</h2>
+    <p>We use only essential functional cookies required to operate the service. If you upload a YouTube cookies.txt file, it is stored server-side solely to make YouTube download requests and can be deleted by you at any time.</p>
+    <h2>Third-Party Advertising</h2>
+    <p>We display advertisements via Google AdSense. Google may use cookies to serve ads based on your browsing history. You can opt out at <a href="https://www.google.com/settings/ads" target="_blank">Google Ads Settings</a>.</p>
+    <h2>Analytics</h2>
+    <p>We may use anonymized, aggregated analytics to understand general usage trends. No personally identifiable information is collected or stored.</p>
     <h2>Data Retention</h2>
-    <p>Downloaded files are automatically deleted after being served. We do not build profiles or sell data.</p>
+    <p>Downloaded files are automatically deleted from our server immediately after being served to you. We do not build user profiles, sell data, or share information with third parties except as required by law.</p>
     <h2>Children's Privacy</h2>
-    <p>SnapLoad is not directed at children under 13.</p>
+    <p>SnapLoad is not directed at children under 13. We do not knowingly collect any information from children.</p>
+    <h2>Changes to This Policy</h2>
+    <p>We may update this policy periodically. The date at the top reflects the latest revision.</p>
   </div>
 </div>
 
-<div class="page-section" id="pg-terms">
+<!-- ══ TERMS ══ -->
+<div class="pg" id="pg-terms">
   <div class="text-page">
     <h1>Terms of Service</h1>
-    <p class="meta">Last updated: January 2025</p>
+    <p class="pg-meta">Last updated: January 2025</p>
     <h2>Acceptance</h2>
-    <p>By using SnapLoad, you agree to these terms.</p>
+    <p>By using SnapLoad, you agree to these Terms of Service. If you do not agree, please do not use the service.</p>
     <h2>Permitted Use</h2>
-    <p>Personal, non-commercial offline viewing only.</p>
+    <p>SnapLoad is provided for personal, non-commercial use only. You may use this service to download videos for offline personal viewing.</p>
     <h2>Prohibited Use</h2>
     <ul>
-      <li>Downloading copyrighted content for redistribution</li>
-      <li>Violating any platform's Terms of Service</li>
-      <li>Infringing on intellectual property rights</li>
-      <li>Automated bulk scraping beyond personal use</li>
+      <li>Downloading copyrighted content for redistribution, re-upload, or commercial use</li>
+      <li>Violating the Terms of Service of any platform you download from</li>
+      <li>Infringing on any intellectual property rights</li>
+      <li>Automated bulk scraping beyond normal personal use</li>
+      <li>Any illegal activity under applicable law</li>
     </ul>
-    <h2>Copyright</h2>
-    <p>SnapLoad does not host or distribute video content. We provide a technical tool for publicly accessible URLs. You are solely responsible for how you use downloaded content.</p>
-    <h2>Disclaimer</h2>
-    <p>SnapLoad is provided "as is." We do not guarantee uninterrupted service as platforms may change at any time.</p>
+    <h2>Copyright & DMCA</h2>
+    <p>SnapLoad does not host, store, or distribute any video content. We provide a technical tool that processes publicly accessible URLs. You are solely responsible for how you use downloaded content and for ensuring compliance with applicable copyright laws.</p>
+    <h2>Disclaimer of Warranties</h2>
+    <p>SnapLoad is provided "as is" without warranties of any kind. We do not guarantee uninterrupted service, as third-party platforms may change their systems at any time.</p>
+    <h2>Limitation of Liability</h2>
+    <p>SnapLoad and its operators shall not be liable for any direct, indirect, or consequential damages arising from your use of this service.</p>
+    <h2>Changes</h2>
+    <p>We reserve the right to update these terms at any time. Continued use constitutes acceptance of updated terms.</p>
   </div>
 </div>
 
 </main>
 
-<!-- ██████ FOOTER ██████ -->
+<!-- ████ FOOTER ████ -->
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="site-logo logo-text" onclick="goPage('home')" style="cursor:pointer">
+        <a class="logo" onclick="goPage('home')" style="cursor:pointer" href="/">
           <div class="logo-icon"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></div>
-          Snap<span>Load</span>
-        </div>
-        <p>Free video downloader for YouTube, TikTok, Instagram, Twitter, Facebook and 1000+ more. No signup, no cost, forever free.</p>
+          Snap<em>Load</em>
+        </a>
+        <p>Free video downloader for YouTube, TikTok, Instagram, Twitter, Facebook and 1000+ more. No signup, always free.</p>
       </div>
       <div class="footer-col">
         <h5>Downloaders</h5>
@@ -1157,489 +842,539 @@ const PLATS = {
           <li><a onclick="goPage('twitter')">Twitter/X</a></li>
           <li><a onclick="goPage('facebook')">Facebook</a></li>
           <li><a onclick="goPage('reddit')">Reddit</a></li>
+          <li><a onclick="goPage('twitch')">Twitch</a></li>
+          <li><a onclick="goPage('vimeo')">Vimeo</a></li>
+          <li><a onclick="goPage('soundcloud')">SoundCloud</a></li>
           <li><a onclick="goPage('mp3')">MP3 Converter</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h5>Company</h5>
         <ul>
-          <li><a onclick="goPage('about')">About</a></li>
+          <li><a onclick="goPage('about')">About Us</a></li>
+          <li><a onclick="goPage('blog')">Blog</a></li>
+          <li><a onclick="goPage('contact')">Contact</a></li>
+          <li><a onclick="goPage('faq')">FAQ</a></li>
           <li><a onclick="goPage('privacy')">Privacy Policy</a></li>
           <li><a onclick="goPage('terms')">Terms of Service</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h5>Formats</h5>
+        <h5>Download Formats</h5>
         <ul>
           <li><a>MP4 HD Download</a></li>
           <li><a>4K Video Download</a></li>
           <li><a>MP3 Audio Extract</a></li>
           <li><a>1080p Video</a></li>
           <li><a>720p Video</a></li>
+          <li><a>480p Video</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© 2025 SnapLoad. For personal use only. Respect copyright laws.</span>
-      <div class="footer-links-row">
+      <div class="footer-btm-links">
         <a onclick="goPage('privacy')">Privacy</a>
         <a onclick="goPage('terms')">Terms</a>
         <a onclick="goPage('about')">About</a>
+        <a onclick="goPage('contact')">Contact</a>
+        <a onclick="goPage('faq')">FAQ</a>
       </div>
     </div>
   </div>
 </footer>
 
+<div id="toast"></div>
+
 <script>
-/* ╔══════════════════════════════════════════════════
-   ║  SNAPLOAD FRONTEND ENGINE
-   ╚══════════════════════════════════════════════════ */
+/* ═══════════════════════════════════════════════════
+   SNAPLOAD ENGINE
+═══════════════════════════════════════════════════ */
 
-/* ── State ── */
-const state = { fmt: {home:'video'}, cards: {} };
+/* ── Platform configs ── */
+const PLATS = {
+  youtube:    {emoji:'▶️',name:'YouTube',color:'#ff2b2b',bg:'rgba(255,43,43,0.12)',h1:'YouTube Video Downloader',sub:'Download YouTube videos in HD, 4K, or MP3 — free, fast, no login needed.',ph:'Paste YouTube URL... (youtube.com/watch?v= or youtu.be/...)',faq:[{q:'What YouTube resolutions are available?',a:'All resolutions the video was uploaded in — from 144p up to 4K (2160p). Select from the quality buttons after fetching.'},{q:'Why does YouTube sometimes fail?',a:'SnapLoad auto-tries 7 different YouTube client strategies. If all fail, upload your cookies.txt via the Cookies button — that fixes it permanently.'},{q:'Can I download YouTube Shorts?',a:'Yes, YouTube Shorts URLs work exactly the same way.'}]},
+  tiktok:     {emoji:'🎵',name:'TikTok',color:'#00f2ea',bg:'rgba(0,242,234,0.1)',h1:'TikTok Video Downloader',sub:'Download TikTok videos without watermark in full HD. Clean, fast, free.',ph:'Paste TikTok URL... (tiktok.com/@user/video/...)',faq:[{q:'Are TikTok videos truly watermark-free?',a:'Yes. We fetch the original source file before TikTok overlays its watermark branding.'},{q:'Does it work with TikTok Lite URLs?',a:'Yes, all public TikTok URL formats are supported.'}]},
+  instagram:  {emoji:'📸',name:'Instagram',color:'#e1306c',bg:'rgba(225,48,108,0.1)',h1:'Instagram Downloader',sub:'Download Instagram Reels, videos and posts. No Instagram login required.',ph:'Paste Instagram URL... (instagram.com/reel/ or /p/...)',faq:[{q:'Can I download private Instagram posts?',a:'No. Only publicly accessible content can be fetched. Private accounts require authentication.'},{q:'Does it work for Instagram Stories?',a:'Stories from public accounts may work. Private stories cannot be downloaded.'}]},
+  twitter:    {emoji:'🐦',name:'Twitter/X',color:'#1d9bf0',bg:'rgba(29,155,240,0.1)',h1:'Twitter / X Video Downloader',sub:'Download Twitter and X videos & GIFs in the best available quality.',ph:'Paste Twitter/X URL... (twitter.com/user/status/... or x.com/...)',faq:[{q:'Does it work with X.com URLs?',a:'Yes, both twitter.com and x.com URLs work.'},{q:'Can I download Twitter GIFs?',a:'Yes, Twitter GIFs are downloaded as MP4 video files.'}]},
+  facebook:   {emoji:'📘',name:'Facebook',color:'#1877f2',bg:'rgba(24,119,242,0.1)',h1:'Facebook Video Downloader',sub:'Download public Facebook videos and Reels instantly.',ph:'Paste Facebook video URL...',faq:[{q:'Can I download private Facebook videos?',a:'No. Only publicly accessible videos can be downloaded.'},{q:'Does it work with Facebook Reels?',a:'Yes, Facebook Reels are supported.'}]},
+  reddit:     {emoji:'🟠',name:'Reddit',color:'#ff4500',bg:'rgba(255,69,0,0.1)',h1:'Reddit Video Downloader',sub:'Download Reddit videos with audio from v.redd.it links.',ph:'Paste Reddit URL... (reddit.com/r/.../comments/...)',faq:[{q:'Why is Reddit video silent?',a:'Reddit stores video and audio separately. SnapLoad merges them automatically using yt-dlp.'},{q:'Does it work with v.redd.it links?',a:'Yes, both reddit.com post links and v.redd.it links work.'}]},
+  twitch:     {emoji:'🟣',name:'Twitch',color:'#9147ff',bg:'rgba(145,71,255,0.1)',h1:'Twitch Video Downloader',sub:'Download Twitch clips and VODs directly.',ph:'Paste Twitch clip or VOD URL...',faq:[{q:'Can I download Twitch streams?',a:'You can download VODs (past broadcasts) and clips. Live streams cannot be downloaded while live.'},{q:'What quality is available?',a:'Best available quality up to 1080p60.'}]},
+  vimeo:      {emoji:'🎬',name:'Vimeo',color:'#1ab7ea',bg:'rgba(26,183,234,0.1)',h1:'Vimeo Video Downloader',sub:'Download Vimeo videos in HD quality.',ph:'Paste Vimeo URL... (vimeo.com/...)',faq:[{q:'Can I download private Vimeo videos?',a:'Only publicly accessible Vimeo videos. Password-protected or private videos cannot be downloaded.'},{q:'What resolution is available?',a:'All resolutions the video was uploaded in, up to 4K if available.'}]},
+  soundcloud: {emoji:'🎧',name:'SoundCloud',color:'#ff5500',bg:'rgba(255,85,0,0.1)',h1:'SoundCloud MP3 Downloader',sub:'Download SoundCloud tracks as high quality MP3 audio.',ph:'Paste SoundCloud URL... (soundcloud.com/...)',faq:[{q:'What audio quality is available?',a:'The highest quality available for the track — usually 128kbps for free tracks, 320kbps for Go+ tracks.'},{q:'Can I download private SoundCloud tracks?',a:'Only publicly accessible tracks can be downloaded.'}]},
+  mp3:        {emoji:'🎵',name:'MP3 Converter',color:'#8b5cf6',bg:'rgba(139,92,246,0.12)',h1:'Free MP3 Converter',sub:'Convert any video URL to MP3 audio — YouTube, SoundCloud and 1000+ sites.',ph:'Paste any URL to extract MP3 audio...',isAudio:true,faq:[{q:'What MP3 bitrate is the output?',a:'The highest available audio quality from the source, usually 128–320kbps depending on the platform.'},{q:'Which sites work with MP3 extraction?',a:'Any site that yt-dlp supports — YouTube, Vimeo, SoundCloud, Facebook, Instagram, TikTok and 1000+ more.'}]},
+  mp4:        {emoji:'📹',name:'MP4 Downloader',color:'#22c55e',bg:'rgba(34,197,94,0.1)',h1:'Free MP4 Video Downloader',sub:'Download any video as MP4 from YouTube, social media and 1000+ sites.',ph:'Paste any video URL for MP4 download...',faq:[{q:'Is MP4 compatible with all devices?',a:'Yes, MP4 (H.264) is the most universally compatible video format, playable on all phones, tablets, and computers.'},{q:'Can I choose the resolution?',a:'Yes, all available resolutions are shown after fetching. Click the quality chip to select before downloading.'}]},
+};
 
-/* ── Build platform pages dynamically ── */
+/* ── Build platform pages ── */
 (function buildPlatPages(){
-  const wrap = document.getElementById('platform-pages');
-  Object.entries(PLATS).forEach(([key, p]) => {
-    const isMp3 = key === 'mp3';
+  const wrap = document.getElementById('platPagesWrap');
+  Object.entries(PLATS).forEach(([key,p])=>{
+    const isAudio = p.isAudio || key==='soundcloud';
+    const faqHtml = (p.faq||[]).map(f=>`
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">${f.q}<span class="faq-arr">▼</span></button>
+      <div class="faq-ans"><p>${f.a}</p></div></div>`).join('');
     wrap.innerHTML += `
-    <div class="page-section" id="pg-${key}">
+    <div class="pg" id="pg-${key}">
       <section class="plat-hero">
+        <div class="hero-blob hero-blob1" style="background:${p.color};opacity:0.08"></div>
         <div class="plat-hero-inner">
-          <div class="plat-icon-big" style="background:${p.bg};border:1px solid ${p.color}33">
-            ${p.emoji}
-          </div>
+          <div class="plat-icon" style="background:${p.bg};border:1px solid ${p.color}44;font-size:2rem">${p.emoji}</div>
           <h1>${p.h1}</h1>
           <p>${p.sub}</p>
-          <div class="dl-card plat-dl-card">
-            <div class="search-wrap">
-              <div class="url-row">
-                <input class="url-input" id="url-${key}" type="url"
-                  placeholder="${p.ph}"
-                  autocomplete="off" spellcheck="false"
-                  onkeydown="if(event.key==='Enter')goFetch('${key}')"/>
-              </div>
-              <div class="bottom-row">
-                <div class="fmt-toggle">
-                  <button class="fmt-pill${isMp3?'':' active'}" data-fmt="video" onclick="setFmt(this,'${key}')">MP4</button>
-                  <button class="fmt-pill${isMp3?' active':''}" data-fmt="audio" onclick="setFmt(this,'${key}')">MP3</button>
+          <div class="dl-box glass-card plat-dl-wrap">
+            <div class="search-box">
+              <div class="url-wrap"><input class="url-inp" id="inp-${key}" type="url" placeholder="${p.ph}" autocomplete="off" spellcheck="false" onkeydown="if(event.key==='Enter')fetch_('${key}')"/><button class="url-clear" onclick="clearInp('${key}')">✕</button></div>
+              <div class="ctrl-row">
+                <div class="fmt-seg">
+                  <button class="fmt-pill${isAudio?'':' active'}" data-fmt="video" onclick="setFmt(this,'${key}')">MP4</button>
+                  <button class="fmt-pill${isAudio?' active':''}" data-fmt="audio" onclick="setFmt(this,'${key}')">MP3</button>
                 </div>
-                <button class="fetch-btn" id="btn-${key}" onclick="goFetch('${key}')">
-                  <svg id="icon-${key}" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-                  <span class="fetch-spinner" id="spin-${key}"></span>
+                <button class="go-btn" id="btn-${key}" onclick="fetch_('${key}')">
+                  <svg id="ico-${key}" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                  <span class="go-spin" id="spin-${key}"></span>
                   <span id="txt-${key}">Download</span>
                 </button>
               </div>
             </div>
-            <p class="url-hint">Paste the link and hit Download</p>
-            <div class="results-area" id="res-${key}"></div>
+            <p class="url-hint">Paste the ${p.name} link and press Download</p>
+            <div class="results" id="res-${key}"></div>
           </div>
         </div>
       </section>
-      <div class="ad-slot ad-slot-banner" style="max-width:728px;margin:0 auto 32px;">Advertisement</div>
+      <div style="max-width:1280px;margin:0 auto;padding:0 20px">
+        <div class="ad-slot ad-banner">Advertisement</div>
+      </div>
+      ${faqHtml ? `<div style="max-width:760px;margin:0 auto;padding:0 20px 48px"><h2 class="sec-title" style="margin-bottom:18px">${p.name} Download FAQ</h2><div class="faq">${faqHtml}</div></div>` : ''}
     </div>`;
-    state.fmt[key] = isMp3 ? 'audio' : 'video';
+    state.fmt[key] = isAudio ? 'audio' : 'video';
   });
 })();
 
-/* ── Page routing ── */
-const pageMap = {
-  home:'pg-home', youtube:'pg-youtube', tiktok:'pg-tiktok',
-  instagram:'pg-instagram', twitter:'pg-twitter',
-  facebook:'pg-facebook', reddit:'pg-reddit',
-  mp3:'pg-mp3', about:'pg-about', privacy:'pg-privacy', terms:'pg-terms'
+/* ── State ── */
+const state = { fmt:{home:'video'}, cards:{} };
+
+/* ── SEO per-page meta ── */
+const pageMeta = {
+  home:       {title:'SnapLoad — Free Video Downloader | YouTube, TikTok, Instagram & 1000+ Sites', desc:'Download videos from YouTube, TikTok, Instagram, Twitter, Facebook free. HD MP4 or MP3 audio. No signup.'},
+  youtube:    {title:'YouTube Video Downloader — HD, 4K & MP3 Free | SnapLoad', desc:'Download YouTube videos in HD, 4K or MP3. All resolutions, fast, free, no login needed.'},
+  tiktok:     {title:'TikTok Video Downloader — No Watermark Free | SnapLoad', desc:'Download TikTok videos without watermark in HD. Free, instant, no registration.'},
+  instagram:  {title:'Instagram Reels Downloader — Free HD Videos | SnapLoad', desc:'Download Instagram Reels, videos and posts free. No Instagram login required.'},
+  twitter:    {title:'Twitter / X Video Downloader — Free HD | SnapLoad', desc:'Download Twitter and X videos & GIFs in best quality. Free, no account needed.'},
+  facebook:   {title:'Facebook Video Downloader — Free HD | SnapLoad', desc:'Download public Facebook videos and Reels instantly, free, no login.'},
+  reddit:     {title:'Reddit Video Downloader — Download v.redd.it Free | SnapLoad', desc:'Download Reddit videos with audio. Works with v.redd.it links. Free.'},
+  twitch:     {title:'Twitch Clip & VOD Downloader — Free | SnapLoad', desc:'Download Twitch clips and VODs free. HD quality, no account needed.'},
+  vimeo:      {title:'Vimeo Video Downloader — Free HD | SnapLoad', desc:'Download Vimeo videos in HD quality. Free, no account required.'},
+  soundcloud: {title:'SoundCloud MP3 Downloader — Free | SnapLoad', desc:'Download SoundCloud tracks as MP3. Free, high quality audio.'},
+  mp3:        {title:'YouTube to MP3 Converter — Free High Quality | SnapLoad', desc:'Convert YouTube, SoundCloud and any video URL to MP3. Free, fast, high quality.'},
+  mp4:        {title:'Free MP4 Downloader — All Sites | SnapLoad', desc:'Download any video as MP4 from YouTube, social media and 1000+ sites. Free.'},
+  blog:       {title:'Blog — Video Download Tips & Guides | SnapLoad', desc:'Tips, guides, and how-to articles about downloading videos from YouTube, TikTok, Instagram and more.'},
+  about:      {title:'About SnapLoad — Free Video Downloader', desc:'Learn about SnapLoad, how it works, and why it is the best free video downloader.'},
+  contact:    {title:'Contact SnapLoad', desc:'Get in touch with the SnapLoad team.'},
+  faq:        {title:'FAQ — SnapLoad Video Downloader', desc:'Frequently asked questions about downloading videos with SnapLoad.'},
+  privacy:    {title:'Privacy Policy — SnapLoad', desc:'SnapLoad privacy policy — how we handle your data.'},
+  terms:      {title:'Terms of Service — SnapLoad', desc:'SnapLoad terms of service — rules for using our free video downloader.'},
 };
 
-function goPage(page) {
-  document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
-  const el = document.getElementById(pageMap[page] || 'pg-home');
-  if (el) el.classList.add('active');
-  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
-  const nav = document.getElementById('nav-' + page);
-  if (nav) nav.classList.add('active');
-  else document.getElementById('nav-home')?.classList.add('active');
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+/* ── Page routing ── */
+function goPage(page, pushState=true){
+  document.querySelectorAll('.pg').forEach(p=>p.classList.remove('active'));
+  const el = document.getElementById('pg-'+page);
+  if(el) el.classList.add('active'); else document.getElementById('pg-home').classList.add('active');
+  document.querySelectorAll('.nav-menu a').forEach(a=>a.classList.remove('active'));
+  const nav = document.getElementById('n-'+page);
+  if(nav) nav.classList.add('active'); else document.getElementById('n-home').classList.add('active');
+  // Update meta
+  const m = pageMeta[page] || pageMeta.home;
+  document.getElementById('pageTitle').textContent = m.title;
+  document.getElementById('pageDesc').setAttribute('content',m.desc);
+  document.getElementById('ogTitle').setAttribute('content',m.title);
+  document.getElementById('ogDesc').setAttribute('content',m.desc);
+  window.scrollTo({top:0,behavior:'smooth'});
   // Focus input
-  const inp = document.getElementById('url-' + page) || document.getElementById('homeUrl');
-  if (inp) setTimeout(() => inp.focus(), 300);
+  const inp = document.getElementById('inp-'+page) || (page==='home'?document.getElementById('homeInp'):null);
+  if(inp) setTimeout(()=>inp.focus(),350);
   return false;
 }
 
-/* ── Mobile drawer ── */
-function toggleDrawer() {
-  const d = document.getElementById('mobileDrawer');
-  const h = document.getElementById('hamburger');
-  d.classList.toggle('open');
-  h.classList.toggle('open');
-}
-function closeDrawer() {
-  document.getElementById('mobileDrawer').classList.remove('open');
-  document.getElementById('hamburger').classList.remove('open');
-}
+/* ── Drawer ── */
+function toggleDrawer(){document.getElementById('mobDrawer').classList.toggle('open');document.getElementById('hamBtn').classList.toggle('open')}
+function closeDrawer(){document.getElementById('mobDrawer').classList.remove('open');document.getElementById('hamBtn').classList.remove('open')}
 
 /* ── Platform tabs ── */
-function setTab(btn) {
-  btn.closest('.ptabs').querySelectorAll('.ptab').forEach(b => b.classList.remove('active'));
+function setTab(btn,id){
+  btn.closest('.ptabs').querySelectorAll('.ptab').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
-  const inp = document.getElementById('homeUrl');
-  if (inp && btn.dataset.ph) { inp.placeholder = btn.dataset.ph; inp.focus(); }
+  const inp = document.getElementById(id==='home'?'homeInp':'inp-'+id);
+  if(inp && btn.dataset.ph){inp.placeholder=btn.dataset.ph;inp.focus()}
 }
 
-/* ── Format toggle ── */
-function setFmt(btn, id) {
-  btn.closest('.fmt-toggle').querySelectorAll('.fmt-pill').forEach(b => b.classList.remove('active'));
+/* ── Format ── */
+function setFmt(btn,id){
+  btn.closest('.fmt-seg').querySelectorAll('.fmt-pill').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
-  state.fmt[id] = btn.dataset.fmt;
+  state.fmt[id]=btn.dataset.fmt;
 }
 
-/* ── Focus URL input from platform card ── */
-function focusUrl(site) {
-  goPage('home');
-  const inp = document.getElementById('homeUrl');
-  inp.placeholder = `Paste ${site} URL here...`;
-  setTimeout(() => { inp.focus(); document.querySelector('.hero').scrollIntoView({behavior:'smooth'}); }, 100);
+/* ── Clear input ── */
+function clearInp(id){
+  const inp=document.getElementById(id==='home'?'homeInp':'inp-'+id);
+  if(inp){inp.value='';inp.focus()}
+  const res=document.getElementById(id==='home'?'homeRes':'res-'+id);
+  if(res) res.innerHTML='';
+  if(state.cards[id]) state.cards[id]=[];
+}
+function setInpPH(id,ph){
+  const inp=document.getElementById(id==='home'?'homeInp':'inp-'+id);
+  if(inp){inp.placeholder=ph;inp.focus()}
+  goPage(id);
 }
 
 /* ── Cookies ── */
-async function checkCookies() {
-  try {
-    const r = await fetch('/api/cookies-status');
-    const d = await r.json();
-    const on = d.uploaded;
-    ['navDot','mobNavDot','modalDot'].forEach(id => {
-      const el = document.getElementById(id);
-      if (el) el.classList.toggle('on', on);
-    });
-    const txt = document.getElementById('modalTxt');
-    if (txt) txt.textContent = on ? '✓ Cookies uploaded — YouTube bot check bypassed' : 'Not uploaded (auto-bypass active)';
-    const del = document.getElementById('delCkBtn');
-    if (del) del.classList.toggle('hidden', !on);
-  } catch(e){}
+async function refreshCk(){
+  try{
+    const r=await fetch('/api/cookies-status');
+    const d=await r.json();
+    const on=d.uploaded;
+    ['navDot','mobDot','mDot'].forEach(id=>{const e=document.getElementById(id);if(e){e.classList.toggle('on',on)}});
+    const t=document.getElementById('mTxt');
+    if(t) t.textContent=on?'✓ Cookies uploaded — YouTube always works':'Auto-bypass active (no cookies needed for most videos)';
+    const db=document.getElementById('delCkBtn');
+    if(db) db.classList.toggle('hidden',!on);
+  }catch(e){}
 }
-function openModal()  { document.getElementById('ckOverlay').classList.add('open'); checkCookies(); }
-function closeModal() { document.getElementById('ckOverlay').classList.remove('open'); }
-
-async function uploadCookies(inp) {
-  if (!inp.files[0]) return;
-  const fd = new FormData();
-  fd.append('file', inp.files[0]);
-  try {
-    const r = await fetch('/api/upload-cookies',{method:'POST',body:fd});
-    const d = await r.json();
-    if (d.success) { checkCookies(); closeModal(); showToast('✓ Cookies uploaded!', 'ok'); }
-    else showToast('Error: '+(d.error||'Upload failed'), 'err');
-  } catch(e) { showToast('Upload failed: '+e.message, 'err'); }
-  inp.value = '';
+function openCkModal(){document.getElementById('ckModal').classList.add('open');refreshCk()}
+function closeCkModal(){document.getElementById('ckModal').classList.remove('open')}
+async function uploadCk(inp){
+  if(!inp.files[0]) return;
+  const fd=new FormData();fd.append('file',inp.files[0]);
+  try{
+    const r=await fetch('/api/upload-cookies',{method:'POST',body:fd});
+    const d=await r.json();
+    if(d.success){refreshCk();closeCkModal();toast('✓ Cookies uploaded! YouTube bot check bypassed.','ok')}
+    else toast('Error: '+(d.error||'Upload failed'),'err');
+  }catch(e){toast('Upload failed: '+e.message,'err')}
+  inp.value='';
 }
-async function deleteCookies() {
-  if (!confirm('Remove saved cookies?')) return;
+async function deleteCk(){
+  if(!confirm('Remove saved cookies?')) return;
   await fetch('/api/delete-cookies',{method:'POST'});
-  checkCookies();
-  showToast('Cookies removed', 'ok');
+  refreshCk();toast('Cookies removed','ok');
 }
 
 /* ── Toast ── */
-function showToast(msg, type='ok') {
-  let t = document.getElementById('snToast');
-  if (!t) {
-    t = document.createElement('div');
-    t.id = 'snToast';
-    t.style.cssText = `position:fixed;bottom:24px;right:24px;z-index:9999;padding:12px 18px;border-radius:10px;font-size:0.8rem;font-weight:600;font-family:inherit;backdrop-filter:blur(20px);border:1px solid;transition:all 0.3s;transform:translateY(60px);opacity:0;max-width:320px;`;
-    document.body.appendChild(t);
-  }
-  t.textContent = msg;
-  const colors = { ok:'#22c55e', err:'#f87171', info:'#60a5fa' };
-  t.style.background = `rgba(14,16,24,0.95)`;
-  t.style.borderColor = colors[type] || colors.info;
-  t.style.color = colors[type] || colors.info;
-  t.style.transform = 'translateY(0)';
-  t.style.opacity = '1';
-  clearTimeout(t._to);
-  t._to = setTimeout(() => { t.style.transform='translateY(60px)'; t.style.opacity='0'; }, 3500);
+function toast(msg,type='ok'){
+  const t=document.getElementById('toast');
+  t.textContent=msg;
+  const c={ok:['#22c55e'],err:['#f87171'],info:['#60a5fa']};
+  t.style.borderColor=c[type]?.[0]||c.info[0];
+  t.style.color=c[type]?.[0]||c.info[0];
+  t.classList.add('show');
+  clearTimeout(t._t);
+  t._t=setTimeout(()=>t.classList.remove('show'),4000);
 }
 
-/* ── Loading state ── */
-function setLoading(id, on) {
-  const btn  = document.getElementById((id==='home'?'homeFetchBtn':'btn-'+id));
-  const icon = document.getElementById((id==='home'?'homeIcon':'icon-'+id));
-  const spin = document.getElementById((id==='home'?'homeSpin':'spin-'+id));
-  const txt  = document.getElementById((id==='home'?'homeTxt':'txt-'+id));
-  if (!btn) return;
-  btn.disabled = on;
-  if (icon) icon.style.display = on ? 'none' : '';
-  if (spin) spin.style.display = on ? '' : 'none';
-  if (txt)  txt.textContent    = on ? 'Fetching...' : 'Download';
+/* ── Loading ── */
+function setLoad(id,on){
+  const iH=id==='home';
+  const btn=document.getElementById(iH?'homeBtn':'btn-'+id);
+  const ico=document.getElementById(iH?'homeIco':'ico-'+id);
+  const sp=document.getElementById(iH?'homeSpin':'spin-'+id);
+  const tx=document.getElementById(iH?'homeTxt':'txt-'+id);
+  if(!btn) return;
+  btn.disabled=on;
+  if(ico) ico.style.display=on?'none':'';
+  if(sp) sp.style.display=on?'':'none';
+  if(tx) tx.textContent=on?'Fetching...':'Download';
 }
 
 /* ── Helpers ── */
-function parseUrls(txt) {
-  return [...new Set(txt.split(/[\s,\n]+/).map(u=>u.trim()).filter(u=>u.startsWith('http')))];
-}
-function fmtDur(s) {
-  if (!s) return '';
-  s = parseInt(s);
-  const h=Math.floor(s/3600),m=Math.floor((s%3600)/60),sec=s%60;
-  return h>0?`${h}:${String(m).padStart(2,'0')}:${String(sec).padStart(2,'0')}`:`${m}:${String(sec).padStart(2,'0')}`;
-}
-function fmtViews(n) {
-  if (!n) return '';
-  n=parseInt(n);
-  if(n>=1e9) return (n/1e9).toFixed(1)+'B views';
-  if(n>=1e6) return (n/1e6).toFixed(1)+'M views';
-  if(n>=1e3) return (n/1e3).toFixed(0)+'K views';
-  return n+' views';
-}
+function parseUrls(txt){return[...new Set(txt.split(/[\s,\n]+/).map(u=>u.trim()).filter(u=>u.startsWith('http')))]}
+function fmtD(s){if(!s)return'';s=parseInt(s);const h=Math.floor(s/3600),m=Math.floor((s%3600)/60),sec=s%60;return h>0?`${h}:${String(m).padStart(2,'0')}:${String(sec).padStart(2,'0')}`:`${m}:${String(sec).padStart(2,'0')}`}
+function fmtV(n){if(!n)return'';n=parseInt(n);if(n>=1e9)return(n/1e9).toFixed(1)+'B views';if(n>=1e6)return(n/1e6).toFixed(1)+'M views';if(n>=1e3)return(n/1e3).toFixed(0)+'K views';return n+' views'}
 function esc(s){const d=document.createElement('div');d.textContent=String(s||'');return d.innerHTML}
-function platLabel(ex){
-  const m={youtube:'YouTube',tiktok:'TikTok',instagram:'Instagram',twitter:'Twitter',facebook:'Facebook',reddit:'Reddit',vimeo:'Vimeo',twitch:'Twitch',soundcloud:'SoundCloud'};
-  for(const[k,v]of Object.entries(m)){if(ex&&ex.includes(k))return v}
-  return '';
-}
+function platLbl(ex){const m={youtube:'YouTube',tiktok:'TikTok',instagram:'Instagram',twitter:'Twitter',facebook:'Facebook',reddit:'Reddit',vimeo:'Vimeo',twitch:'Twitch',soundcloud:'SoundCloud'};for(const[k,v]of Object.entries(m)){if(ex&&ex.includes(k))return v}return''}
 
 /* ── Main fetch ── */
-async function goFetch(id) {
-  const inp = document.getElementById(id==='home'?'homeUrl':'url-'+id);
-  if (!inp) return;
-  const raw  = inp.value.trim();
-  const urls = parseUrls(raw);
-  if (!urls.length) { inp.focus(); return; }
-
-  const resArea = document.getElementById(id==='home'?'homeResults':'res-'+id);
-  setLoading(id, true);
-  resArea.innerHTML = '';
-  if (!state.cards[id]) state.cards[id] = [];
-  state.cards[id] = [];
-
-  // Show loading animation
-  resArea.innerHTML = `
-    <div class="loading-state">
-      <div class="loading-progress"><div class="loading-progress-bar"></div></div>
-      <div class="loading-label">
-        <span class="loading-dots"><span></span><span></span><span></span></span>
-        Fetching video info...
-      </div>
-    </div>`;
-
-  // Small delay so animation shows
-  await new Promise(r => setTimeout(r, 400));
-
-  resArea.innerHTML = '';
-
-  for (let i = 0; i < urls.length; i++) {
-    const url = urls[i];
-    const idx = state.cards[id].length;
-    state.cards[id].push({ url, status:'loading' });
-    renderCard(id, idx);
-
-    try {
-      const r = await fetch('/api/info',{
-        method:'POST',
-        headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({url})
-      });
-      const data = await r.json();
-      if (data.error) {
-        state.cards[id][idx] = {...state.cards[id][idx], status:'info-error', error:data.error};
-      } else {
-        state.cards[id][idx] = {
-          ...state.cards[id][idx], status:'ready',
-          title:data.title||'', thumbnail:data.thumbnail||'',
-          duration:data.duration, uploader:data.uploader||'',
-          views:data.view_count, extractor:data.extractor||'',
-          formats:data.formats||[],
-          selFmt:data.formats?.[0]?.id||null,
-        };
+async function fetch_(id){
+  const iH=id==='home';
+  const inp=document.getElementById(iH?'homeInp':'inp-'+id);
+  if(!inp) return;
+  const urls=parseUrls(inp.value.trim());
+  if(!urls.length){inp.focus();return}
+  const res=document.getElementById(iH?'homeRes':'res-'+id);
+  if(!state.cards[id]) state.cards[id]=[];
+  state.cards[id]=[];
+  setLoad(id,true);
+  res.innerHTML=`<div class="load-state"><div class="load-bar"><div class="load-fill"></div></div><div class="load-txt"><span class="dots"><span></span><span></span><span></span></span> Fetching video info...</div></div>`;
+  await new Promise(r=>setTimeout(r,300));
+  res.innerHTML='';
+  for(let i=0;i<urls.length;i++){
+    const url=urls[i];
+    const idx=state.cards[id].length;
+    state.cards[id].push({url,status:'loading'});
+    renderCard(id,idx);
+    try{
+      const r=await fetch('/api/info',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({url})});
+      const data=await r.json();
+      if(data.error){
+        state.cards[id][idx]={...state.cards[id][idx],status:'info-error',error:data.error};
+      }else{
+        state.cards[id][idx]={...state.cards[id][idx],status:'ready',title:data.title||'',thumbnail:data.thumbnail||'',duration:data.duration,uploader:data.uploader||'',views:data.view_count,extractor:data.extractor||'',formats:data.formats||[],selFmt:data.formats?.[0]?.id||null};
       }
-    } catch(e) {
-      state.cards[id][idx] = {...state.cards[id][idx], status:'info-error', error:e.message};
-    }
-    renderCard(id, idx);
+    }catch(e){state.cards[id][idx]={...state.cards[id][idx],status:'info-error',error:e.message}}
+    renderCard(id,idx);
   }
-
-  if (state.cards[id].filter(c=>c.status==='ready').length > 1) renderDlAll(id);
-  setLoading(id, false);
+  if(state.cards[id].filter(c=>c.status==='ready').length>1) renderDlAll(id);
+  setLoad(id,false);
 }
 
 /* ── Render card ── */
-function renderCard(id, idx) {
-  const c    = state.cards[id][idx];
-  const area = document.getElementById(id==='home'?'homeResults':'res-'+id);
-  let el = document.getElementById(`rc-${id}-${idx}`);
-  if (!el) {
-    el = document.createElement('div');
-    el.id = `rc-${id}-${idx}`;
-    area.appendChild(el);
+function renderCard(id,idx){
+  const c=state.cards[id][idx];
+  const res=document.getElementById(id==='home'?'homeRes':'res-'+id);
+  let el=document.getElementById(`rc-${id}-${idx}`);
+  if(!el){el=document.createElement('div');el.id=`rc-${id}-${idx}`;res.appendChild(el)}
+  if(c.status==='loading'){
+    el.innerHTML=`<div class="skel"><div class="skel-img"></div><div class="skel-body"><div class="skel-l w7"></div><div class="skel-l w5"></div><div class="skel-l w3"></div></div></div>`;return;
   }
-
-  if (c.status === 'loading') {
-    el.innerHTML = `<div class="skeleton-card">
-      <div class="skel-thumb"></div>
-      <div class="skel-body">
-        <div class="skel-line w70"></div>
-        <div class="skel-line w50"></div>
-        <div class="skel-line w30"></div>
-      </div>
-    </div>`;
-    return;
+  if(c.status==='info-error'){
+    el.innerHTML=`<div class="r-card err-card"><div class="card-row"><div class="c-thumb"><div class="no-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></div></div><div class="c-body"><div class="c-title" style="color:var(--red)">Could not fetch video</div><div class="err-msg">${esc(c.error||'Unknown error')}</div><div class="err-url">${esc(c.url)}</div></div></div></div>`;return;
   }
-
-  if (c.status === 'info-error') {
-    el.innerHTML = `<div class="result-card error-card">
-      <div class="card-row">
-        <div class="card-thumb"><div class="no-thumb">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-        </div></div>
-        <div class="card-body">
-          <div class="card-title" style="color:var(--red)">Could not fetch video</div>
-          <div class="error-msg">${esc(c.error||'Unknown error')}</div>
-          <div class="error-url">${esc(c.url)}</div>
-        </div>
-      </div>
-    </div>`;
-    return;
-  }
-
-  const isAudio = state.fmt[id] === 'audio';
-  const pl = platLabel(c.extractor);
-
+  const isAudio=state.fmt[id]==='audio';
+  const pl=platLbl(c.extractor);
   let thumb;
-  if (isAudio) {
-    thumb = `<div class="no-thumb" style="color:var(--blue)">
-      <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-    </div>`;
-  } else if (c.thumbnail) {
-    thumb = `<img src="${esc(c.thumbnail)}" alt="${esc(c.title)}" loading="lazy"
-      onerror="this.parentElement.innerHTML='<div class=no-thumb><svg viewBox=\\'0 0 24 24\\' fill=\\'none\\' stroke=\\'currentColor\\' stroke-width=\\'1.5\\'><rect x=\\'2\\' y=\\'2\\' width=\\'20\\' height=\\'20\\' rx=\\'2\\'/></svg></div>'">
-    ${pl?`<div class="thumb-plat">${pl}</div>`:''}`;
-  } else {
-    thumb = `<div class="no-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="m21 15-5-5L5 21"/></svg></div>`;
-  }
-
-  let chips = '';
-  if (!isAudio && c.formats?.length > 1) {
-    chips = c.formats.map(f =>
-      `<button class="q-chip${f.id===c.selFmt?' active':''}" onclick="pickQ('${id}',${idx},'${f.id}')">${f.label}</button>`
-    ).join('');
-  }
-
-  let actions = '';
-  if (c.status === 'ready') {
-    actions = `<button class="dl-btn" onclick="dlCard('${id}',${idx})">
-      <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-      Download
-    </button>${chips}`;
-  } else if (c.status === 'downloading') {
-    actions = `<span class="card-status dl"><span class="tiny-spin"></span> Downloading...</span>`;
-  } else if (c.status === 'done') {
-    actions = `<button class="dl-btn done" onclick="saveCard('${id}',${idx})">
-      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-      Save File
-    </button><span class="card-status ok">Ready!</span>`;
-  } else if (c.status === 'error') {
-    actions = `<button class="dl-btn" onclick="dlCard('${id}',${idx})">Retry</button>
-      <span class="card-status err">${esc(c.error||'Failed')}</span>`;
-  }
-
-  el.innerHTML = `<div class="result-card">
-    <div class="card-row">
-      <div class="card-thumb">${thumb}</div>
-      <div class="card-body">
-        <div class="card-title">${esc(c.title||'Untitled')}</div>
-        <div class="card-meta">
-          ${c.uploader?`<span class="meta-chip">👤 ${esc(c.uploader)}</span>`:''}
-          ${c.duration?`<span class="meta-chip">⏱ ${fmtDur(c.duration)}</span>`:''}
-          ${c.views?`<span class="meta-chip">👁 ${fmtViews(c.views)}</span>`:''}
-        </div>
-        <div class="card-actions">${actions}</div>
-      </div>
-    </div>
-  </div>`;
+  if(isAudio){thumb=`<div class="no-thumb" style="color:var(--blue2)"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>`}
+  else if(c.thumbnail){thumb=`<img src="${esc(c.thumbnail)}" alt="${esc(c.title)}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-thumb><svg viewBox=\\'0 0 24 24\\' fill=\\'none\\' stroke=\\'currentColor\\' stroke-width=\\'1.5\\'><rect x=\\'2\\' y=\\'2\\' width=\\'20\\' height=\\'20\\' rx=\\'2\\'/></svg></div>'">${pl?`<div class="c-plat">${pl}</div>`:''}`}
+  else{thumb=`<div class="no-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="m21 15-5-5L5 21"/></svg></div>`}
+  let chips='';
+  if(!isAudio && c.formats?.length>1){chips=c.formats.map(f=>`<button class="q-btn${f.id===c.selFmt?' active':''}" onclick="pickQ('${id}',${idx},'${f.id}')">${f.label}</button>`).join('')}
+  let acts='';
+  if(c.status==='ready'){acts=`<button class="dl-btn" onclick="dlCard('${id}',${idx})"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>Download</button>${chips}`}
+  else if(c.status==='downloading'){acts=`<span class="c-status dl"><span class="tiny-spin"></span> Downloading...</span>`}
+  else if(c.status==='done'){acts=`<button class="dl-btn done" onclick="saveCard('${id}',${idx})"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Save File</button><span class="c-status ok">✓ Ready!</span>`}
+  else if(c.status==='error'){acts=`<button class="dl-btn" onclick="dlCard('${id}',${idx})">Retry</button><span class="c-status err">${esc(c.error||'Failed')}</span>`}
+  el.innerHTML=`<div class="r-card"><div class="card-row"><div class="c-thumb">${thumb}</div><div class="c-body"><div class="c-title">${esc(c.title||'Untitled')}</div><div class="c-meta">${c.uploader?`<span class="c-chip">👤 ${esc(c.uploader)}</span>`:''} ${c.duration?`<span class="c-chip">⏱ ${fmtD(c.duration)}</span>`:''} ${c.views?`<span class="c-chip">👁 ${fmtV(c.views)}</span>`:''}</div><div class="c-actions">${acts}</div></div></div></div>`;
 }
 
-function renderDlAll(id) {
-  const ex = document.getElementById(`dlall-${id}`);
-  if (ex) ex.remove();
-  const area = document.getElementById(id==='home'?'homeResults':'res-'+id);
-  const row  = document.createElement('div');
-  row.id = `dlall-${id}`;
-  row.className = 'dl-all-row';
-  row.innerHTML = `<button class="dl-all-btn" onclick="dlAll('${id}')">
-    <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-    Download All
-  </button>`;
-  area.appendChild(row);
+function renderDlAll(id){
+  const ex=document.getElementById(`dab-${id}`);if(ex) ex.remove();
+  const res=document.getElementById(id==='home'?'homeRes':'res-'+id);
+  const row=document.createElement('div');row.id=`dab-${id}`;
+  row.innerHTML=`<button class="dlall-btn" onclick="dlAll('${id}')"><svg style="width:14px;height:14px;fill:currentColor" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>Download All</button>`;
+  res.appendChild(row);
 }
+function pickQ(id,idx,fid){state.cards[id][idx].selFmt=fid;renderCard(id,idx)}
 
-function pickQ(id, idx, fmtId) {
-  state.cards[id][idx].selFmt = fmtId;
-  renderCard(id, idx);
+async function dlCard(id,idx){
+  const c=state.cards[id][idx];c.status='downloading';c.error=null;renderCard(id,idx);
+  try{
+    const r=await fetch('/api/download',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({url:c.url,format:state.fmt[id],format_id:c.selFmt,title:c.title||''})});
+    const d=await r.json();
+    if(d.error){c.status='error';c.error=d.error;renderCard(id,idx);return}
+    c.jobId=d.job_id;pollCard(id,idx);
+  }catch(e){c.status='error';c.error=e.message;renderCard(id,idx)}
 }
-
-/* ── Download ── */
-async function dlCard(id, idx) {
-  const c = state.cards[id][idx];
-  c.status = 'downloading'; c.error = null;
-  renderCard(id, idx);
-  try {
-    const r = await fetch('/api/download',{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({url:c.url, format:state.fmt[id], format_id:c.selFmt, title:c.title||''})
-    });
-    const d = await r.json();
-    if (d.error) { c.status='error'; c.error=d.error; renderCard(id,idx); return; }
-    c.jobId = d.job_id;
-    pollCard(id, idx);
-  } catch(e) { c.status='error'; c.error=e.message; renderCard(id,idx); }
+function pollCard(id,idx){
+  const c=state.cards[id][idx];
+  const iv=setInterval(async()=>{
+    try{
+      const r=await fetch(`/api/status/${c.jobId}`);const d=await r.json();
+      if(d.status==='done'){clearInterval(iv);c.status='done';c.filename=d.filename;renderCard(id,idx);saveCard(id,idx)}
+      else if(d.status==='error'){clearInterval(iv);c.status='error';c.error=d.error;renderCard(id,idx)}
+    }catch{clearInterval(iv);c.status='error';c.error='Connection lost';renderCard(id,idx)}
+  },1200);
 }
-
-function pollCard(id, idx) {
-  const c  = state.cards[id][idx];
-  const iv = setInterval(async () => {
-    try {
-      const r  = await fetch(`/api/status/${c.jobId}`);
-      const d  = await r.json();
-      if (d.status==='done')  { clearInterval(iv); c.status='done'; c.filename=d.filename; renderCard(id,idx); saveCard(id,idx); }
-      if (d.status==='error') { clearInterval(iv); c.status='error'; c.error=d.error; renderCard(id,idx); }
-    } catch { clearInterval(iv); c.status='error'; c.error='Connection lost'; renderCard(id,idx); }
-  }, 1000);
-}
-
-function saveCard(id, idx) {
-  const c = state.cards[id][idx];
-  if (!c.jobId) return;
-  const a = document.createElement('a');
-  a.href = `/api/file/${c.jobId}`; a.download = c.filename||''; a.click();
-}
-
-async function dlAll(id) {
-  const btn = document.getElementById(`dlall-${id}`)?.querySelector('button');
-  if (btn) btn.disabled = true;
-  for (let i = 0; i < (state.cards[id]||[]).length; i++) {
-    if (state.cards[id][i]?.status === 'ready') await dlCard(id, i);
-  }
-  if (btn) btn.disabled = false;
-}
+function saveCard(id,idx){const c=state.cards[id][idx];if(!c.jobId)return;const a=document.createElement('a');a.href=`/api/file/${c.jobId}`;a.download=c.filename||'';a.click()}
+async function dlAll(id){const btn=document.getElementById(`dab-${id}`)?.querySelector('button');if(btn)btn.disabled=true;for(let i=0;i<(state.cards[id]||[]).length;i++){if(state.cards[id][i]?.status==='ready') await dlCard(id,i)}if(btn)btn.disabled=false}
 
 /* ── FAQ ── */
-function toggleFaq(btn) {
-  const item = btn.parentElement;
-  const open = item.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
-  if (!open) item.classList.add('open');
+function toggleFaq(btn){const item=btn.parentElement;const open=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));if(!open)item.classList.add('open')}
+
+/* ══════════════════════════════════════
+   BLOG SYSTEM
+══════════════════════════════════════ */
+let allBlogs=[];
+let activeCat='All';
+let editingSlug=null;
+
+function fmtDate(ts){if(!ts)return'';return new Date(ts*1000).toLocaleDateString('en-US',{year:'numeric',month:'short',day:'numeric'})}
+function coverEmoji(cat){const m={General:'📰','YouTube Tips':'▶️','TikTok Guide':'🎵','Instagram':'📸','How-To':'🔧','News':'📡','MP3 & Audio':'🎧','Privacy & Legal':'⚖️'};return m[cat]||'📝'}
+
+async function loadBlogs(){
+  try{
+    const r=await fetch('/api/blogs');
+    allBlogs=await r.json();
+    renderBlogGrid(allBlogs);
+    renderCatFilter();
+  }catch(e){document.getElementById('blogGrid').innerHTML=`<div class="no-blogs"><div class="nb-icon">❌</div><p>Could not load posts. Make sure the server is running.</p></div>`}
 }
 
-/* ── INIT ── */
-checkCookies();
+function renderCatFilter(){
+  const cats=['All',...new Set(allBlogs.map(b=>b.category).filter(Boolean))];
+  const el=document.getElementById('catFilter');
+  el.innerHTML=cats.map(c=>`<button class="cat-btn${c===activeCat?' active':''}" onclick="filterCat('${c}')">${c}</button>`).join('');
+}
 
-// Handle browser back/forward
-window.addEventListener('popstate', () => {
-  const path = location.pathname;
-  const map = {'/':'home','/youtube-downloader':'youtube','/tiktok-downloader':'tiktok','/instagram-downloader':'instagram','/twitter-downloader':'twitter','/facebook-downloader':'facebook','/reddit-downloader':'reddit','/mp3-converter':'mp3','/about':'about','/privacy-policy':'privacy','/terms-of-service':'terms'};
-  const page = map[path] || 'home';
-  goPage(page);
-});
+function filterCat(cat){
+  activeCat=cat;
+  document.querySelectorAll('.cat-btn').forEach(b=>b.classList.toggle('active',b.textContent===cat));
+  const filtered=cat==='All'?allBlogs:allBlogs.filter(b=>b.category===cat);
+  renderBlogGrid(filtered);
+}
+
+function renderBlogGrid(blogs){
+  const grid=document.getElementById('blogGrid');
+  if(!blogs.length){
+    grid.innerHTML=`<div class="no-blogs"><div class="nb-icon">📝</div><p>No posts yet. <strong onclick="goPage('blog-editor')" style="color:var(--blue2);cursor:pointer">Write the first post →</strong></p></div>`;
+    return;
+  }
+  grid.innerHTML=blogs.map(b=>`
+    <div class="blog-card" onclick="viewPost('${b.slug}')">
+      <div class="blog-cover">
+        ${b.cover_image?`<img src="${esc(b.cover_image)}" alt="${esc(b.title)}" loading="lazy" onerror="this.style.display='none'">`:''}
+        <div class="blog-cover-placeholder" ${b.cover_image?'style="display:none"':''}>${coverEmoji(b.category)}</div>
+        ${b.category?`<div class="blog-cat">${esc(b.category)}</div>`:''}
+      </div>
+      <div class="blog-body">
+        <div class="blog-title">${esc(b.title)}</div>
+        <div class="blog-excerpt">${esc(b.excerpt||b.content?.substring(0,120)||'')}</div>
+        <div class="blog-meta">
+          <span>✍️ ${esc(b.author||'SnapLoad Team')}</span>
+          <span>${fmtDate(b.created_at)}</span>
+        </div>
+        ${b.tags?.length?`<div class="blog-tags">${b.tags.map(t=>`<span class="blog-tag">${esc(t)}</span>`).join('')}</div>`:''}
+      </div>
+    </div>`).join('');
+}
+
+async function viewPost(slug){
+  try{
+    const r=await fetch(`/api/blogs/${slug}`);
+    if(!r.ok) throw new Error('Not found');
+    const post=await r.json();
+    renderPostView(post);
+    goPage('blog-post');
+  }catch(e){toast('Post not found','err')}
+}
+
+function renderPostView(post){
+  const el=document.getElementById('blogPostContent');
+  const content=renderContent(post.content||'');
+  el.innerHTML=`
+    ${post.cover_image?`<div class="post-cover"><img src="${esc(post.cover_image)}" alt="${esc(post.title)}"></div>`:''}
+    <div class="post-meta-bar">
+      ${post.category?`<span class="post-meta-item">📁 ${esc(post.category)}</span>`:''}
+      <span class="post-meta-item">✍️ ${esc(post.author||'SnapLoad Team')}</span>
+      <span class="post-meta-item">📅 ${fmtDate(post.created_at)}</span>
+      ${post.tags?.length?`<span class="post-meta-item">🏷️ ${post.tags.map(t=>esc(t)).join(', ')}</span>`:''}
+    </div>
+    <h1 class="post-title">${esc(post.title)}</h1>
+    <div class="post-content">${content}</div>
+    <div class="post-actions">
+      <button class="back-btn" onclick="goPage('blog')">← Back to Blog</button>
+      <button class="edit-btn" onclick="editPost('${post.slug}')">✏️ Edit</button>
+      <button class="del-btn" onclick="deletePost('${post.slug}')">🗑 Delete</button>
+    </div>`;
+}
+
+function renderContent(txt){
+  // Simple markdown-like rendering
+  return txt
+    .replace(/^### (.+)$/gm,'<h3>$1</h3>')
+    .replace(/^## (.+)$/gm,'<h2>$1</h2>')
+    .replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>')
+    .replace(/\[(.+?)\]\((.+?)\)/g,'<a href="$2" target="_blank">$1</a>')
+    .replace(/\n\n/g,'</p><p>')
+    .replace(/^(?!<[h])/,'<p>')
+    .replace(/(?<![>])$/,'</p>');
+}
+
+function editPost(slug){
+  const post=allBlogs.find(b=>b.slug===slug);
+  if(!post) return;
+  editingSlug=slug;
+  document.getElementById('editSlug').value=slug;
+  document.getElementById('edTitle').value=post.title||'';
+  document.getElementById('edExcerpt').value=post.excerpt||'';
+  document.getElementById('edCategory').value=post.category||'General';
+  document.getElementById('edAuthor').value=post.author||'SnapLoad Team';
+  document.getElementById('edTags').value=(post.tags||[]).join(', ');
+  document.getElementById('edCover').value=post.cover_image||'';
+  document.getElementById('editorContent').value=post.content||'';
+  document.getElementById('editorHeading').textContent='Edit Post';
+  document.getElementById('savePostTxt').textContent='Update Post';
+  goPage('blog-editor');
+}
+
+async function deletePost(slug){
+  if(!confirm('Delete this blog post? This cannot be undone.')) return;
+  try{
+    await fetch(`/api/blogs/${slug}`,{method:'DELETE'});
+    toast('Post deleted','ok');
+    await loadBlogs();
+    goPage('blog');
+  }catch(e){toast('Delete failed','err')}
+}
+
+async function savePost(){
+  const title=document.getElementById('edTitle').value.trim();
+  const content=document.getElementById('editorContent').value.trim();
+  if(!title){toast('Title is required','err');document.getElementById('edTitle').focus();return}
+  if(!content){toast('Content is required','err');document.getElementById('editorContent').focus();return}
+  const tags=document.getElementById('edTags').value.split(',').map(t=>t.trim()).filter(Boolean);
+  const body={
+    title,content,
+    excerpt:document.getElementById('edExcerpt').value.trim(),
+    category:document.getElementById('edCategory').value,
+    author:document.getElementById('edAuthor').value.trim()||'SnapLoad Team',
+    tags,
+    cover_image:document.getElementById('edCover').value.trim(),
+  };
+  const slug=document.getElementById('editSlug').value;
+  const btn=document.getElementById('savePostTxt');
+  btn.textContent='Saving...';
+  try{
+    let r;
+    if(slug){r=await fetch(`/api/blogs/${slug}`,{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)})}
+    else{r=await fetch('/api/blogs',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)})}
+    const d=await r.json();
+    if(d.success){
+      toast(slug?'Post updated!':'Post published!','ok');
+      editingSlug=null;
+      document.getElementById('editSlug').value='';
+      document.getElementById('editorHeading').textContent='Write New Post';
+      document.getElementById('savePostTxt').textContent='Publish Post';
+      // Reset form
+      ['edTitle','edExcerpt','edTags','edCover','editorContent'].forEach(id=>document.getElementById(id).value='');
+      await loadBlogs();
+      if(d.slug) viewPost(d.slug); else goPage('blog');
+    }else{toast('Error: '+(d.error||'Save failed'),'err')}
+  }catch(e){toast('Save failed: '+e.message,'err')}
+  btn.textContent=slug?'Update Post':'Publish Post';
+}
+
+function previewPost(){
+  const title=document.getElementById('edTitle').value||'Preview';
+  const content=document.getElementById('editorContent').value||'';
+  const post={title,content,author:document.getElementById('edAuthor').value,category:document.getElementById('edCategory').value,tags:document.getElementById('edTags').value.split(',').map(t=>t.trim()).filter(Boolean),cover_image:document.getElementById('edCover').value,created_at:Math.floor(Date.now()/1000)};
+  renderPostView(post);
+  goPage('blog-post');
+}
+
+/* ── Contact form ── */
+function submitContact(){
+  const name=document.getElementById('cName').value.trim();
+  const email=document.getElementById('cEmail').value.trim();
+  const msg=document.getElementById('cMsg').value.trim();
+  if(!name||!email||!msg){toast('Please fill all required fields','err');return}
+  toast('Message sent! We will get back to you soon.','ok');
+  ['cName','cEmail','cMsg'].forEach(id=>document.getElementById(id).value='');
+}
+
+/* ── Init ── */
+refreshCk();
+loadBlogs();
 </script>
 </body>
 </html>
